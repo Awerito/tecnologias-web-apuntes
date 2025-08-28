@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro de Alumno</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Registro de Alumno</h1>
+      <p>
+        Completa el formulario y presiona <strong>Enviar</strong>. Serás
+        redirigido a la página de confirmación.
+      </p>
+
+      <form action="done.html" method="get">
+        <fieldset>
+          <legend>Identificación del alumno</legend>
+
+          <label for="nombre_completo">Nombre completo</label>
+          <input
+            id="nombre_completo"
+            name="nombre_completo"
+            type="text"
+            required
+            placeholder="Ej: Ana María Pérez"
+          />
+
+          <label for="rut">RUT</label>
+          <input
+            id="rut"
+            name="rut"
+            type="text"
+            required
+            placeholder="12.345.678-5"
+            pattern="^\d{1,2}\.?\d{3}\.?\d{3}-[\dkK]$"
+            title="Formato válido: 12.345.678-5 o 12345678-K"
+          />
+
+          <label for="correo">Correo electrónico</label>
+          <input
+            id="correo"
+            name="correo"
+            type="email"
+            required
+            placeholder="nombre@ejemplo.com"
+          />
+
+          <label for="telefono">Teléfono</label>
+          <input
+            id="telefono"
+            name="telefono"
+            type="tel"
+            placeholder="+56 9 1234 5678"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Datos académicos</legend>
+
+          <label for="carrera">Carrera / Programa</label>
+          <select id="carrera" name="carrera" required>
+            <option value="" disabled selected>Selecciona tu carrera</option>
+            <option>Ingeniería Civil Informática</option>
+            <option>Ingeniería Comercial</option>
+            <option>Enfermería</option>
+            <option>Pedagogía en Matemáticas</option>
+          </select>
+
+          <p>Jornada:</p>
+          <label
+            ><input type="radio" name="jornada" value="Diurna" required />
+            Diurna</label
+          >
+          <label
+            ><input type="radio" name="jornada" value="Vespertina" />
+            Vespertina</label
+          >
+
+          <label for="sede">Sede / Ciudad</label>
+          <input id="sede" name="sede" list="sede_list" required />
+          <datalist id="sede_list">
+            <option value="Puerto Montt"></option>
+            <option value="Osorno"></option>
+            <option value="Valdivia"></option>
+            <option value="Santiago"></option>
+          </datalist>
+        </fieldset>
+
+        <fieldset>
+          <legend>Confirmaciones</legend>
+          <label
+            ><input type="checkbox" name="terminos" required /> Acepto los
+            términos y condiciones</label
+          >
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+      </form>
+
+      <p class="note">
+        Nota: Al enviar, los datos se verán como parámetros en la barra de
+        direcciones de <code>done.html</code>. Sin JavaScript ni backend, esa
+        página no puede mostrarlos automáticamente.
+      </p>
+    </main>
+  </body>
+</html>

@@ -5,10 +5,16 @@ main {
   font-family: system-ui, sans-serif;
 }
 
-a {
+a.comprar {
   display: inline-block;
   padding: 10px 16px;
   text-decoration: none;
+  color: brown;
   border: 1px solid #222;
-  border-radius: 8px;
+  border-radius: 1px;
+}
+
+a.comprar:hover {
+  background-color: brown;
+  color: white;
 }

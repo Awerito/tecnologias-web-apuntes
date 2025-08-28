@@ -1,0 +1,93 @@
+/* Estilos básicos y simples */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fafb;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1,
+h2 {
+  color: #222;
+}
+
+form {
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+fieldset {
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+select,
+button {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+/* Estados de validación nativa */
+input:invalid {
+  border-color: #e53e3e;
+}
+input:valid {
+  border-color: #38a169;
+}
+
+button {
+  width: auto;
+  background: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #1d4ed8;
+}
+
+.note {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+th {
+  background: #f1f1f1;
+  text-align: left;
+}
