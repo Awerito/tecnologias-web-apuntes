@@ -1,4 +1,4 @@
-/* Estilos básicos y simples */
+/* Estilos básicos */
 
 body {
   font-family: Arial, sans-serif;
@@ -19,6 +19,7 @@ h2 {
   color: #222;
 }
 
+/* Formulario */
 form {
   background: #fff;
   padding: 16px;
@@ -29,46 +30,69 @@ form {
 fieldset {
   margin-bottom: 16px;
   border: 1px solid #ccc;
+  border-radius: 4px;
   padding: 12px;
 }
 
 legend {
   font-weight: bold;
+  padding: 0 6px;
 }
 
 label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-weight: 500;
 }
 
-input,
+/* Inputs de texto y selects */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
 select,
-button {
+input[list] {
   display: block;
   width: 100%;
+  box-sizing: border-box; /* evita que se desborde del fieldset */
   margin-bottom: 12px;
   padding: 8px;
   border: 1px solid #bbb;
   border-radius: 4px;
 }
 
-/* Estados de validación nativa */
-input:invalid {
-  border-color: #e53e3e;
+/* Radios y checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 6px;
 }
-input:valid {
-  border-color: #38a169;
+label input[type="radio"],
+label input[type="checkbox"] {
+  display: inline-block;
+  margin-bottom: 0;
 }
 
+/* Botones */
 button {
   width: auto;
   background: #2563eb;
   color: white;
   border: none;
+  border-radius: 4px;
+  padding: 8px 14px;
+  margin-right: 6px;
   cursor: pointer;
 }
 button:hover {
   background: #1d4ed8;
+}
+
+/* Validación nativa */
+input:invalid {
+  border-color: #e53e3e;
+}
+input:valid {
+  border-color: #38a169;
 }
 
 .note {
@@ -77,6 +101,7 @@ button:hover {
   margin-top: 20px;
 }
 
+/* Tablas en done.html */
 table {
   width: 100%;
   border-collapse: collapse;
