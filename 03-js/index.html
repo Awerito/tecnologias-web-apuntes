@@ -1,0 +1,9 @@
+<button id="btn">Contar</button>
+<output id="out">0</output>
+<script>
+  let v = 0;
+  const out = document.getElementById("out");
+  document.getElementById("btn").addEventListener("click", () => {
+    out.textContent = String(++v);
+  });
+</script>
