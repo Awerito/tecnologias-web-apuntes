@@ -40,10 +40,7 @@ yarn install
 
 ```bash
 # crear un proyecto react con vite
-npm create vite@latest mi-app
-cd mi-app
-yarn
-yarn dev
+yarn create vite nombre-proyecto
 ```
 
 ---
