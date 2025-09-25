@@ -1,5 +1,5 @@
 ---
-title: "Clase 4 — Introducción a React"
+title: "Clase 5 — Introducción a React"
 author: "Diego Muñoz"
 date: "16 de septiembre de 2025"
 theme: "metropolis"
