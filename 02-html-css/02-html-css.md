@@ -1,7 +1,7 @@
 ---
 title: "Clase Básica de HTML y CSS"
 author: "Diego Muñoz"
-date: "26 de agosto de 2025"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true

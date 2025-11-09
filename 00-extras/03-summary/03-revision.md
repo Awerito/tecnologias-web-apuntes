@@ -1,7 +1,7 @@
 ---
 title: "Resumen de Temas en Desarrollo Web y Móvil"
 author: "Diego Muñoz"
-date: "27 de noviembre de 2024"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -14,7 +14,7 @@ En este curso vimos varios conceptos clave en desarrollo web y móvil, desde
 
 ---
 
-## 1. React y Hooks
+# React y Hooks
 
 ### React
 
@@ -26,12 +26,12 @@ cambia en la interfaz.
 
 ---
 
-## Sin JSX
+# Sin JSX
 
 ```js
 import React from 'react';
 
-const Greeting = () => {
+export default const Greeting = () => {
   return React.createElement(
     'div',
     null,
@@ -39,18 +39,16 @@ const Greeting = () => {
     React.createElement('p', null, 'Enjoy your stay.')
   );
 }
-
-export default Greeting;
 ```
 
 ---
 
-## Con JSX
+# Con JSX
 
 ```jsx
 import React from 'react';
 
-const Greeting = () => {
+export default const Greeting = () => {
   return (
     <div>
       <h1>Hello, welcome to my app!</h1>
@@ -58,12 +56,10 @@ const Greeting = () => {
     </div>
   );
 }
-
-export default Greeting;
 ```
 ---
 
-## Hooks
+# Hooks
 
 - **useState**: Para manejar el estado en los componentes funcionales.
 - **useEffect**: Para manejar efectos secundarios como fetch o suscripciones.
@@ -72,12 +68,12 @@ compartida entre varios componentes.
 
 ---
 
-## useState
+# useState
 
 ```jsx
 import React, { useState } from 'react';
 
-const Counter = () => {
+export default const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -87,13 +83,11 @@ const Counter = () => {
     </div>
   );
 };
-
-export default Counter;
 ```
 
 ---
 
-## 2. Gestión de Estado con Context
+# Gestión de Estado con Context
 
 - **Context API**: Es una forma de compartir datos entre componentes sin tener
 que pasar props por todos lados.
@@ -102,7 +96,7 @@ de forma fácil.
 
 ---
 
-## Context API
+# Context API
 
 ```jsx
 import { createContext, useState, useContext } from 'react';
@@ -123,7 +117,7 @@ const CountProvider = ({ children }) => {
 
 ---
 
-## useContext
+# useContext
 
 ```jsx
 const Counter = () => {
@@ -140,7 +134,7 @@ const Counter = () => {
 
 ---
 
-## 3. Navegación en React
+# Navegación en React
 
 ### React Router
 
@@ -156,7 +150,7 @@ móviles con Expo.
 
 ---
 
-## 4. APIs y Autenticación
+# APIs y Autenticación
 
 ### Consumo de APIs con `fetch`
 
@@ -173,7 +167,7 @@ forma segura.
 
 ---
 
-## 5. React Native
+# React Native
 
 - **React Native**: Nos permite crear aplicaciones móviles nativas usando
 React.
@@ -182,7 +176,7 @@ apps con React Native.
 
 ---
 
-## 6. Despliegue
+# Despliegue
 
 ### Despliegue en Web
 

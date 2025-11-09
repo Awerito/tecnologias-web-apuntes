@@ -1,7 +1,7 @@
 ---
 title: "Flujo de autenticación web"
 author: "Diego Muñoz"
-date: "14 de noviembre de 2024"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true

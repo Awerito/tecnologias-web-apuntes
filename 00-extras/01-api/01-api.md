@@ -1,7 +1,7 @@
 ---
 title: "Consumo de APIs REST"
 author: "Diego Muñoz"
-date: "27 de noviembre de 2024"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -16,7 +16,7 @@ protocolos para desarrollar e integrar software.
 
 --- 
 
-## ¿Qué es una API?
+# ¿Qué hace una API?
 
 - Las APIs permiten que diferentes aplicaciones o sistemas interactúen entre
 sí.
@@ -27,7 +27,7 @@ programa.
 
 ---
 
-### ¿Para qué se usan las APIs?
+# ¿Para qué se usan las APIs?
 
 - **Interacción entre aplicaciones**: Permiten que aplicaciones hablen entre
 sí, como enviar mensajes desde una app a otra.
@@ -40,8 +40,6 @@ procesadores de pago o mapas.
 
 # ¿Qué es un API REST?
 
-## Definición
-
 - **REST (Representational State Transfer)**: Un estilo arquitectónico para
 diseñar servicios web.
 - Funciona sobre **HTTP**, utilizando métodos como GET, POST, PUT y DELETE.
@@ -50,13 +48,13 @@ representaciones (JSON, XML, etc.).
 
 ---
 
-## Métodos
+# Métodos
 
 ![Métodos REST](./imgs/rest.png){ width=70% }
 
 ---
 
-## Características clave
+# Características clave
 
 - **Stateless**: No guarda estado entre las solicitudes.
 - **Cliente-servidor**: Los clientes y servidores están desacoplados.

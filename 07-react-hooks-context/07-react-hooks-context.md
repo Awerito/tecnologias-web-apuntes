@@ -1,7 +1,7 @@
 ---
-title: "Clase 7 — React: Hooks, Custom Hooks y Context"
+title: "React: Hooks, Custom Hooks y Context"
 author: "Diego Muñoz"
-date: "30 de septiembre de 2025"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true

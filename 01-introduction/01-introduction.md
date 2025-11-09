@@ -1,7 +1,7 @@
 ---
 title: "Introducción al Desarrollo Web"
 author: "Diego Muñoz"
-date: "18 de agosto de 2024"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true

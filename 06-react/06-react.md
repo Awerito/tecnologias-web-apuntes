@@ -1,7 +1,7 @@
 ---
-title: "Clase 6 — React: Componentes, Props y Hooks"
+title: "React: Componentes, Props y Hooks"
 author: "Diego Muñoz"
-date: "23 de septiembre de 2025"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true

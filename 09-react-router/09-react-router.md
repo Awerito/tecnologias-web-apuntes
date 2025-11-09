@@ -1,7 +1,7 @@
 ---
-title: "Clase 9 — React Router: Navegación en SPAs"
+title: "React Router: Navegación en SPAs"
 author: "Diego Muñoz"
-date: "14 de octubre de 2025"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
