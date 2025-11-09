@@ -1,7 +1,7 @@
 ---
-title: "Clase 8 — React: Fetch y manejo de carga"
+title: "React: Fetch y manejo de carga"
 author: "Diego Muñoz"
-date: "7 de octubre de 2025"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true

@@ -1,7 +1,7 @@
 ---
 title: "JavaScript (ES6) manipular DOM"
 author: "Diego Muñoz"
-date: "9 de septiembre de 2025"
+date: "09 de noviembre de 2025"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
