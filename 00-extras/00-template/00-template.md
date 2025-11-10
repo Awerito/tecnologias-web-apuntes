@@ -22,7 +22,7 @@ colorlinks: true
 - Mantén entre 3 y 5 líneas por diapositiva para mejorar la legibilidad.
 - Combina texto + visuales cuando aporte contexto.
 
-![Descripción de la imagen](imgs/{{archivo}}.png){ width=40% }
+![Descripción de la imagen](./imgs/archivo.png){ width=40% }
 
 > Nota: coloca los recursos dentro de una carpeta `imgs/` junto al archivo de
 > la clase y ajusta `width` (10%–60%) según el espacio disponible.
@@ -34,14 +34,15 @@ colorlinks: true
 ## Ejemplo de código
 
 ```js
-// Usa el lenguaje correcto para la sintaxis (`js`, `html`, `css`, `bash`, etc.)
+// Usa el lenguaje correcto para la sintaxis (`js`, `html`, `css`, `bash`)
 const ejemplo = () => {
   console.log("Recuerda dejar suficiente espacio alrededor del código");
 };
 ```
 
 - Introduce el snippet con una frase breve.
-- Limita los bloques de código a 8–12 líneas para evitar scroll al exportar a PDF.
+- Limita los bloques de código a 8–12 líneas para evitar scroll al exportar a
+PDF.
 
 ---
 
@@ -50,7 +51,8 @@ const ejemplo = () => {
 ## Comparación / resumen visual
 - Puedes mezclar listas numeradas con texto corrido.
 - Alterna slides con sólo texto y slides con imagen/código para mantener ritmo.
-- En promedio cada diapositiva contiene 40–60 palabras, similar a las clases existentes.
+- En promedio cada diapositiva contiene 40–60 palabras, similar a las clases
+existentes.
 
 1. Idea clave A.
 2. Idea clave B.
@@ -58,7 +60,7 @@ const ejemplo = () => {
 
 ---
 
-# Cierre / resumen
+# Resumen
 
 1. Punto destacado de la clase.
 2. Punto destacado 2.
@@ -71,4 +73,8 @@ const ejemplo = () => {
 - [Recurso 1](https://example.com)
 - [Recurso 2](https://example.com)
 
-> Tip: Usa `---` para separar cada diapositiva y encabezados `#` / `##` para jerarquizar como en las clases existentes.
+<!-- Tip: Usa `---` para separar cada diapositiva y encabezados `#` / `##` para jerarquizar como en las clases existentes. -->
+<!-- Tip: Las diapos siempre comienzan con un título (nivel 1) y opcionalmente un subtítulo (nivel 2). -->
+<!-- Tip: No se pueden usar emojis ni caracteres especiales. -->
+<!-- Tip: Las diapos no pueden extenderse mucho en caracteres de ancho o alto. -->
+<!-- Tip: No abusar de '> texto' al final de muchas diapositivas. -->
