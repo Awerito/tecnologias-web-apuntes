@@ -70,11 +70,16 @@ existentes.
 
 # Recursos adicionales
 
-- [Recurso 1](https://example.com)
-- [Recurso 2](https://example.com)
+- [Recurso 1][ex1]
+- [Recurso 2][ex2]
+
+
+[ex1]: (https://one.example.com)
+[ex2]: (https://two.example.com)
 
 <!-- Tip: Usa `---` para separar cada diapositiva y encabezados `#` / `##` para jerarquizar como en las clases existentes. -->
 <!-- Tip: Las diapos siempre comienzan con un título (nivel 1) y opcionalmente un subtítulo (nivel 2). -->
 <!-- Tip: No se pueden usar emojis ni caracteres especiales. -->
 <!-- Tip: Las diapos no pueden extenderse mucho en caracteres de ancho o alto. -->
 <!-- Tip: No abusar de '> texto' al final de muchas diapositivas. -->
+<!-- Tip: urls deben referenciarse como footnote para proteger la legibilidad. -->
