@@ -9,89 +9,60 @@ colorlinks: true
 
 # React Native + Tailwind
 
-* Configurar **Tailwind** en **React Native + Expo** usando **JavaScript**.
-* Usar **NativeWind** para clases tipo Tailwind.
+* Usar una plantilla con **NativeWind + Tailwind** ya configurados.
+* Trabajar el código en estilo **JavaScript** (sin preocuparnos de tipos).
 * Ver conceptos básicos de **diseño móvil**: layout, scroll, safe area.
 
 ---
 
 # Punto de partida
 
-* Proyecto de la clase anterior:
+* En vez de configurar todo a mano, usaremos la plantilla oficial:
 
 ```bash
-yarn create expo hello-rn-js --template blank
-cd hello-rn-js
+npx rn-new --nativewind --yarn
 ````
 
-* Configuración de Yarn en `.yarnrc.yml`:
+* Elegir un nombre de proyecto (ej: `hello-rn-nativewind`).
+* El proyecto viene con:
 
-```yaml
-nodeLinker: node-modules
-```
+  * Expo
+  * NativeWind
+  * Tailwind v3
+  * Metro + Babel ya configurados
 
-* App base en `App.js` o `App.jsx` en **JS**.
+> Aunque los archivos sean `.tsx`, podemos escribir código como si fuera JS.
+
+---
+
+# Estructura base
+
+Archivos importantes que ya vienen listos:
+
+* `App.tsx` — punto de entrada.
+* `tailwind.config.js` — config de Tailwind + NativeWind.
+* `babel.config.js` — plugin de NativeWind.
+* `metro.config.js` — integra `global.css`.
+* `global.css` — importa `@tailwind base`, `components`, `utilities`.
+
+> No hay que tocar la configuración para esta clase, solo el código de la app.
 
 ---
 
 # NativeWind
 
-* Biblioteca que permite usar **clases tipo Tailwind** en React Native.
+* Biblioteca para usar **clases tipo Tailwind** en React Native.
 * Traduce `bg-blue-500`, `text-xl`, `flex-1`, etc. a estilos nativos.
-* Funciona con Expo sin ejectar el proyecto.
-
----
-
-# Instalación
-
-Desde la carpeta del proyecto:
-
-```bash
-yarn add nativewind tailwindcss
-npx tailwindcss init
-```
-
-* Esto crea `tailwind.config.js` (vacío al inicio).
-
----
-
-# `tailwind.config.js`
-
-```js
-module.exports = {
-  content: [
-    "./App.{js,jsx}",
-    "./src/**/*.{js,jsx}",
-  ],
-  theme: { extend: {} },
-  plugins: []
-};
-```
-
-* `content`: dónde buscar clases.
-* `src/`: opcional, pero sirve para mantener nuestra estructura.
-
----
-
-# `babel.config.js`
-
-```js
-module.exports = function (api) {
-  api.cache(true);
-  return {
-    presets: ["babel-preset-expo"],
-    plugins: ["nativewind/babel"]
-  };
-};
-```
-
-* Plugin necesario para que NativeWind procese las clases.
+* Funciona sobre Expo con el setup generado por `rn-new`.
 
 ---
 
 # Primer test con NativeWind
 
+En `App.tsx` (usamos className en lugar de Styles):
+
 ```js
+import "./global.css";
 import { Text, View } from "react-native";
 export default function App() {
   return (
@@ -104,18 +75,29 @@ export default function App() {
   );
 }
 ```
+---
 
-* Uso de `className` en vez de `style`.
+# Levantar el proyecto
+
+Desde la carpeta del proyecto:
+
+```bash
+yarn start
+```
+
+* Se abre el panel de Expo Dev Tools.
+* Escanear el código QR con **Expo Go**.
+* Si algo se rompe tras editar, hacer **Reload** desde la app o reiniciar `yarn start`.
 
 ---
 
 # Web vs móvil
 
 * Pantalla pequeña y orientación variable.
-* No hay **hover**, solo toque/gestos.
-* Textos deben ser legibles en pantallas con DPI alto.
+* No hay **hover**, solo toques/gestos.
+* Texto debe ser legible en pantallas con DPI alto.
 * Considerar **notch**, barra de estado y zonas no utilizables.
-* Usuario en movimiento, no sentado frente a un monitor.
+* Usuario muchas veces en movimiento.
 
 ---
 
@@ -124,7 +106,6 @@ export default function App() {
 * Layout basado en **Flexbox**:
 
   * `flex-1`, `flex-row`, `items-center`, `justify-between`, etc.
-* NativeWind mapea estas utilidades a estilos nativos.
 
 ```js
 <View className="flex-1 flex-row items-center justify-between px-4">
@@ -132,6 +113,8 @@ export default function App() {
   <Text className="text-white">Right</Text>
 </View>
 ```
+
+* NativeWind mapea estas utilidades a estilos nativos.
 
 ---
 
@@ -153,6 +136,8 @@ export default function App() {
   );
 }
 ```
+
+* Scroll vertical por defecto.
 
 ---
 
@@ -201,15 +186,18 @@ export default function App() {
 
 # Resumen
 
-* Agregamos **NativeWind + Tailwind** a un proyecto Expo en **JS**.
-* Editamos `tailwind.config.js` y `babel.config.js`.
-* Usamos `className` para estilos.
+* Usamos `npx rn-new --nativewind --yarn` para generar un proyecto Expo con:
+
+  * NativeWind
+  * Tailwind v3
+  * Babel + Metro configurados
+* Trabajamos con código estilo **JS** aunque los archivos sean `.tsx`.
 * Vimos:
 
   * Pantalla pequeña y DPI alto.
-  * Flexbox como base de layout.
-  * `ScrollView` para contenido largo.
-  * `SafeAreaView` para zonas seguras.
+  * Flexbox.
+  * `ScrollView`.
+  * `SafeAreaView`.
   * Componentes táctiles (`Pressable`).
 
 ---
@@ -220,7 +208,8 @@ export default function App() {
 
   * Foto, nombre, descripción breve.
   * Botón de acción.
-* Practicar combinando:
+
+* Combinar:
 
   * `ScrollView`
   * layout con Flexbox
