@@ -147,14 +147,13 @@ export default function App() {
 * Evitar que el contenido quede “debajo” de esas áreas.
 
 ```js
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Text } from "react-native";
 
 export default function App() {
   return (
     <SafeAreaView className="flex-1 bg-slate-900">
-      <Text className="text-xl text-white m-4">
-        Content inside safe area
-      </Text>
+      <Text className="text-xl text-white m-4">Dentro del área segura</Text>
     </SafeAreaView>
   );
 }
