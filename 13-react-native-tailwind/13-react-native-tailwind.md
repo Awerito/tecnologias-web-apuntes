@@ -21,7 +21,7 @@ colorlinks: true
 
 ```bash
 npx rn-new --nativewind --yarn
-````
+```
 
 * Elegir un nombre de proyecto (ej: `hello-rn-nativewind`).
 * El proyecto viene con:
