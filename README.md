@@ -22,7 +22,7 @@ correspondiente.
 2. Ejecuta el script de compilación desde la raíz del repositorio:
 
    ```bash
-   ./scripts/compilar_pdfs.sh
+   ./scripts/build_pdfs.sh
    ```
 
 El script recorre cada carpeta que contiene un archivo Markdown de clase y

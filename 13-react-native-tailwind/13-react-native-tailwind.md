@@ -1,7 +1,7 @@
 ---
 title: "React Native + Tailwind (NativeWind)"
 author: "Diego Muñoz"
-date: "20 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -213,3 +213,9 @@ export default function App() {
   * `ScrollView`
   * layout con Flexbox
   * botones táctiles (`Pressable`)
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

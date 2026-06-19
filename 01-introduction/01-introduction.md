@@ -1,7 +1,7 @@
 ---
 title: "Introducción al Desarrollo Web"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -101,3 +101,9 @@ Facebook.
 1. Se presentó React como una biblioteca para construir interfaces de usuario,
    destacando sus características clave y problemas que resuelve.
 1. Se mencionaron alternativas a React, como Vue.js, Svelte y otras opciones.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

@@ -1,7 +1,7 @@
 ---
 title: "React: Hooks, Custom Hooks y Context"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -251,3 +251,9 @@ Referir a ejemplo en
 * `Custom hooks`: encapsular lógica reutilizable.
 * `Context`: compartir datos globales.
 * `useContext`: consumir el contexto.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

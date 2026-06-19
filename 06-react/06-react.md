@@ -1,7 +1,7 @@
 ---
 title: "React: Componentes, Props y Hooks"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -258,3 +258,9 @@ Referir a ejemplo en
 * **Eventos**: funciones que reaccionan a la interacción.
 * **Prop drilling**: props que viajan en cadena → motivación para aprender Context más adelante.
 * **Lifting state up:** estado sube al padre para ser compartido por varios hijos.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

@@ -1,7 +1,7 @@
 ---
 title: "React: Fetch y manejo de carga"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -156,3 +156,9 @@ Referir a ejemplo en
 * `useEffect`: decide **cuándo** cargar.
 * `useState`: administra `data`, `isLoading`, `error`.
 * Patrón “3 estados” listo para reutilizar en toda la app.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

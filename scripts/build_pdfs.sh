@@ -9,7 +9,7 @@ find "$ROOT_DIR" -type f -name '*.md' \
   ! -name 'README.md' \
   -print0 | sort -z | while IFS= read -r -d '' md_file; do
   base_name="$(basename "$md_file")"
-  # Omite archivos auxiliares que no representan clases
+  # Skip auxiliary files that are not classes
   case "$base_name" in
     README.md|LICENSE.md)
       continue
@@ -20,7 +20,7 @@ find "$ROOT_DIR" -type f -name '*.md' \
   output_name="${base_name%.md}.pdf"
   rel_dir="${dir_name#$ROOT_DIR/}"
 
-  echo "Generando ${rel_dir}/${output_name}"
+  echo "Generating ${rel_dir}/${output_name}"
   (
     cd "$dir_name"
     "$PANDOC_COMMAND" -t beamer --pdf-engine="$PDF_ENGINE" "$base_name" -o "$output_name"

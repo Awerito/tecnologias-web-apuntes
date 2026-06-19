@@ -1,7 +1,7 @@
 ---
 title: "React Native: Introducción y Setup"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -208,3 +208,9 @@ const styles = StyleSheet.create({
 * [Expo Go en App Store](https://apps.apple.com/app/expo-go/id982107779)
 
 > Tip: `yarn start --tunnel` evita bloqueos de red o firewall institucional.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

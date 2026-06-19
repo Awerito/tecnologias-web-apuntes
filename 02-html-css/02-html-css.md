@@ -1,7 +1,7 @@
 ---
 title: "Clase Básica de HTML y CSS"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -435,3 +435,9 @@ Referir a ejemplo en
 - Practica con componentes simples y layouts comunes.
 - Prioriza accesibilidad y responsive.
 - Mantén estilos modulares y consistentes.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

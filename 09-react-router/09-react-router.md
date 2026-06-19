@@ -1,7 +1,7 @@
 ---
 title: "React Router: Navegación en SPAs"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -207,3 +207,9 @@ Referir a ejemplo en
 * **Link**: navegación declarativa.
 * **useParams / useNavigate**: lectura y cambio de ruta.
 * **SPA real**: una sola página HTML, múltiples vistas.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

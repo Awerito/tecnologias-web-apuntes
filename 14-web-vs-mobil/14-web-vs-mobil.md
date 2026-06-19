@@ -1,7 +1,7 @@
 ---
 title: "Paradigmas de Diseño: Móvil vs Web"
 author: "Diego Muñoz"
-date: "09 de diciembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -466,3 +466,9 @@ colorlinks: true
 [material]: https://m3.material.io/
 [rn-docs]: https://reactnative.dev/docs/getting-started
 [mobile-bp]: https://www.nngroup.com/articles/mobile-usability-principles/
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

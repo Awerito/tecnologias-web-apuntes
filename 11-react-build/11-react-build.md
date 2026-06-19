@@ -1,7 +1,7 @@
 ---
 title: "React Build: Construyendo y Desplegando Aplicaciones"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -188,3 +188,9 @@ usuario.
 [3]: https://docs.netlify.com/
 [4]: https://vitejs.dev/guide/build.html
 [5]: https://docs.netlify.com/environment-variables/overview/
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

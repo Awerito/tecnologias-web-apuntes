@@ -1,7 +1,7 @@
 ---
 title: "React + Tailwind"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -210,3 +210,9 @@ Referir a ejemplo en
 * Si algo se usa mucho, hazlo componente (`Button`, `Card`, `Container`).
 * Usa `clsx` para clases que dependen de una condición.
 * Mira los ejemplos oficiales de Tailwind para inspirarte.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

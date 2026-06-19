@@ -1,7 +1,7 @@
 ---
 title: "Clase Básica de JavaScript (ES6) — Bases para React"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -222,3 +222,9 @@ Referir a ejemplo en
 * Inmutabilidad como regla.
 * map/filter/reduce para listas.
 * Conceptos listos para React.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

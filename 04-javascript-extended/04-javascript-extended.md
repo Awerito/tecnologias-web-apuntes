@@ -1,7 +1,7 @@
 ---
 title: "JavaScript (ES6) manipular DOM"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -275,3 +275,9 @@ Referir a ejemplo en
 * Podemos seleccionar nodos, leer/escribir, escuchar eventos.
 * Practicamos closures, arrays funcionales e inmutabilidad.
 * Simulamos estado y render, igual que React lo hará.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!

@@ -1,7 +1,7 @@
 ---
 title: "Introducción a React"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "19 de junio de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -211,3 +211,9 @@ Referir a ejemplo en
 * Componentes = funciones puras + props.
 * `useState`: primer hook para manejar estado.
 * Listas y eventos → ya estamos listos para proyectos más grandes.
+
+---
+
+# Preguntas y Discusión
+
+¿Tienes dudas? ¡Hablemos!
