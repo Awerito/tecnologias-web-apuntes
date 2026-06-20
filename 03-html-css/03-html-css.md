@@ -15,7 +15,7 @@ mantenibles.
 
 ---
 
-# ¿Qué es HTML? ¿Qué es CSS?
+# HTML y CSS
 
 - **HTML**: Lenguaje de marcado para estructurar contenido.
 - **CSS**: Lenguaje de estilos para presentar ese contenido.
@@ -148,7 +148,7 @@ mantenibles.
 
 ---
 
-# ¿Qué es CSS?
+# CSS
 
 - Define colores, tipografías, espacios, tamaños y layouts.
 - Se aplica a elementos seleccionados por **selectores**.

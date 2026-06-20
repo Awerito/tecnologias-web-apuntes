@@ -16,7 +16,7 @@ colorlinks: true
 
 ---
 
-# ¿Qué es un componente?
+# Componentes
 
 - Una **función de JavaScript** que devuelve "HTML" (JSX).
 - Debe iniciar con **mayúscula**.  

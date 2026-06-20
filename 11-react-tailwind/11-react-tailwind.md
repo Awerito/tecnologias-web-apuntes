@@ -73,7 +73,7 @@ createRoot(document.getElementById("root")).render(<App />);
 
 ---
 
-# ¿Qué significa "utility-first"?
+# Utility-first
 
 * Tailwind no entrega componentes prefabricados.
 * En vez de eso, usa **clases pequeñas y descriptivas** (utilities) que se combinan.

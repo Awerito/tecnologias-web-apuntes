@@ -15,7 +15,7 @@ colorlinks: true
 
 ---
 
-# ¿Qué es el DOM?
+# El DOM
 
 - **DOM = Document Object Model**.  
 - Representación en memoria de la página web.  

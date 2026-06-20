@@ -16,7 +16,7 @@ colorlinks: true
 
 ---
 
-# ¿Por qué usar React Router?
+# Motivación de React Router
 
 * React solo muestra **un componente raíz** (`App`).
 * Necesitamos un sistema para cambiar “pantallas” sin recargar.

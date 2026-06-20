@@ -16,7 +16,7 @@ colorlinks: true
 
 ---
 
-# ¿Qué es un Hook?
+# Hooks
 
 * Función especial de React para usar **estado y ciclo de vida** en componentes funcionales.
 * Todos comienzan con `use`.
