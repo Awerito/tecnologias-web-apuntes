@@ -7,7 +7,7 @@ PDF generada con Pandoc.
 ## Estructura de carpetas
 
 - `00-extras/`: Materiales complementarios (API, OAuth2, revisiones).
-- `01-introduction/` a `10-react-tailwind/`: Apuntes principales de cada clase
+- `01-git-github/` a `15-web-vs-mobil/`: Apuntes principales de cada clase
 numerada. Dentro de cada carpeta encontrarás un archivo `NN-nombre.md` y su PDF
 correspondiente.
 - `Tecnologías Móviles y Web.pdf`: Presentación general del curso.
