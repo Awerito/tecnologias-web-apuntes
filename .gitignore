@@ -346,4 +346,8 @@ tags
 # Persistent undo
 [._]*.un~
 
+# Instructor-only: private, never committed
+evaluaciones/
+TODO.md
+
 # End of https://www.toptal.com/developers/gitignore/api/vim,linux,latex
