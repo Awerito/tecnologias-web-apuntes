@@ -196,7 +196,7 @@ src/
 # Proyecto de ejemplo
 
 Referir a ejemplo en
-[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/09-react-router).
+[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/10-react-router).
 
 ---
 

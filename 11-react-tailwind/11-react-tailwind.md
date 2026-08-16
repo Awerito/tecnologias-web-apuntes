@@ -200,7 +200,7 @@ export default function App(){
 # Proyecto de ejemplo
 
 Referir a ejemplo en
-[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/10-react-tailwind).
+[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/11-react-tailwind).
 
 ---
 

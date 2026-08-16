@@ -255,7 +255,7 @@ $("#onlyActive").addEventListener("input", () => {
 # Proyecto de ejemplo
 
 Referir a ejemplo en
-[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/04-javascript-extended).
+[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/05-javascript-extended).
 
 ---
 

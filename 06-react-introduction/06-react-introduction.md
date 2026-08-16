@@ -199,7 +199,7 @@ function App() {
 # Proyecto de ejemplo
 
 Referir a ejemplo en
-[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/05-react-introduction).
+[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/06-react-introduction).
 
 ---
 

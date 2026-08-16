@@ -211,7 +211,7 @@ En React: `cond && <Componente />`.
 # Proyecto de ejemplo
 
 Referir a ejemplo en
-[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/03-javascript).
+[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/04-javascript).
 
 ---
 
