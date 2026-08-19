@@ -424,7 +424,7 @@ h1 { font-size: 1.5rem; }
 # Proyecto de ejemplo
 
 Referir a ejemplo en
-[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/03-html-css).
+[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/02-html-css).
 
 ---
 

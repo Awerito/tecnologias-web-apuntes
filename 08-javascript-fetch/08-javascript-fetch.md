@@ -146,7 +146,7 @@ const [error, setError]     = useState(null);
 # Proyecto de ejemplo
 
 Referir a ejemplo en
-[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/09-javascript-fetch).
+[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/08-javascript-fetch).
 
 ---
 

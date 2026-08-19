@@ -240,7 +240,7 @@ Organiza el código por **función y responsabilidad**.
 # Proyecto de ejemplo
 
 Referir a ejemplo en
-[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/08-react-hooks-context).
+[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/07-react-hooks-context).
 
 ---
 
