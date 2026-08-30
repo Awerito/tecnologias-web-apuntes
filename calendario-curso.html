@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Docencia · Segundo semestre 2026</title>
+    <style>
+      :root {
+        --ink: #000;
+        --paper: #ffd6e7;
+        --card: #fff;
+        --pink: #ff90c2;
+        --pink-soft: #ffeaf3;
+        --gray: #d6d6d6;
+        --yellow: #ffe066;
+        --shadow: 5px 5px 0 var(--ink);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+        font-size: 15px;
+        line-height: 1.45;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: clamp(1rem, 3vw, 2.5rem);
+      }
+
+      header {
+        margin-bottom: 1.75rem;
+      }
+      .eyebrow {
+        display: inline-block;
+        background: var(--ink);
+        color: var(--paper);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.6rem;
+        margin: 0 0 0.75rem;
+      }
+      h1 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        font-weight: 900;
+        letter-spacing: -0.02em;
+        line-height: 1;
+        margin: 0 0 0.75rem;
+        text-transform: uppercase;
+      }
+      .range {
+        font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+
+      .tally {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        margin: 1.75rem 0;
+      }
+      .t {
+        background: var(--card);
+        border: 3px solid var(--ink);
+        box-shadow: var(--shadow);
+        padding: 0.9rem;
+      }
+      .t b {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -0.03em;
+      }
+      .t span {
+        display: block;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-top: 0.4rem;
+      }
+      .t.net {
+        background: var(--pink);
+      }
+
+      .legend {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+        margin: 0 0 2rem;
+      }
+      .lg {
+        background: var(--card);
+        border: 3px solid var(--ink);
+        box-shadow: var(--shadow);
+        padding: 0.7rem 0.8rem;
+        display: flex;
+        gap: 0.7rem;
+        align-items: center;
+      }
+      .chip {
+        width: 20px;
+        height: 34px;
+        border: 3px solid var(--ink);
+        flex: none;
+      }
+      .chip.cls {
+        background: var(--pink);
+      }
+      .chip.off {
+        background: var(--gray);
+      }
+      .chip.ev {
+        background: var(--ink);
+      }
+      .lg b {
+        display: block;
+        font-size: 0.84rem;
+        font-weight: 800;
+        line-height: 1.2;
+      }
+      .lg span {
+        font-size: 0.72rem;
+        font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+      }
+
+      .months {
+        display: grid;
+        gap: 1.75rem;
+        grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+      }
+      .month {
+        background: var(--card);
+        border: 3px solid var(--ink);
+        box-shadow: var(--shadow);
+        padding: 1rem;
+      }
+      .month h2 {
+        font-size: 1.1rem;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        margin: 0 0 0.8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .month h2 em {
+        font-style: normal;
+        background: var(--ink);
+        color: var(--card);
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        padding: 0.25rem 0.45rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+      }
+      th {
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding-bottom: 0.4rem;
+        text-align: center;
+      }
+      td {
+        border: 2px solid var(--ink);
+        height: 76px;
+        vertical-align: top;
+        padding: 2px;
+      }
+      td.void,
+      td.outside {
+        border-color: var(--gray);
+        background: var(--paper);
+      }
+      td.tt {
+        background: var(--pink-soft);
+      }
+      .dnum {
+        display: block;
+        font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+        font-size: 0.68rem;
+        font-weight: 700;
+        padding: 1px 3px;
+      }
+      td.outside .dnum {
+        color: #b09aa4;
+        font-weight: 400;
+      }
+      .snum {
+        float: right;
+        font-style: normal;
+        font-size: 0.58rem;
+      }
+
+      .blk {
+        display: block;
+        border: 2px solid var(--ink);
+        padding: 2px 3px;
+        margin: 0 0 2px;
+        font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+        font-size: 0.58rem;
+        font-weight: 600;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+      }
+      .blk b {
+        display: block;
+        font-size: 0.61rem;
+        font-weight: 800;
+      }
+      .blk.cls {
+        background: var(--pink);
+      }
+      .blk.off {
+        background: var(--gray);
+        text-decoration: line-through;
+      }
+      .blk.ev {
+        background: var(--ink);
+        color: var(--card);
+      }
+
+      .notes {
+        margin-top: 2rem;
+        background: var(--card);
+        border: 3px solid var(--ink);
+        box-shadow: var(--shadow);
+        padding: 1.2rem;
+      }
+      .notes h3 {
+        display: inline-block;
+        background: var(--ink);
+        color: var(--card);
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 0.3rem 0.6rem;
+        margin: 0 0 0.9rem;
+      }
+      .notes ul {
+        margin: 0;
+        padding-left: 1.1rem;
+      }
+      .notes li {
+        margin-bottom: 0.6rem;
+        font-size: 0.88rem;
+      }
+      .notes li:last-child {
+        margin-bottom: 0;
+      }
+      .notes code {
+        background: var(--pink-soft);
+        border: 1px solid var(--ink);
+        padding: 0 3px;
+      }
+      footer {
+        margin-top: 1.5rem;
+        font-family: ui-monospace, "Cascadia Code", Menlo, monospace;
+        font-size: 0.7rem;
+        font-weight: 600;
+      }
+
+      @media (max-width: 520px) {
+        td {
+          height: 66px;
+        }
+      }
+      @media print {
+        body {
+          background: #fff;
+        }
+        .t,
+        .lg,
+        .month,
+        .notes {
+          box-shadow: none;
+        }
+        .month {
+          break-inside: avoid;
+        }
+        .months {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <p class="eyebrow">Docencia · Segundo semestre 2026 · ULagos</p>
+        <h1>Mis clases: martes y jueves</h1>
+        <p class="range">
+          Periodo lectivo 17 ago → 24 dic 2026 · Bloque 16:15–18:00 hrs
+        </p>
+      </header>
+
+      <div class="legend">
+        <div class="lg">
+          <div class="chip cls"></div>
+          <div><b>Clase</b><span>16:15–18:00</span></div>
+        </div>
+        <div class="lg">
+          <div class="chip off"></div>
+          <div><b>Sin clases</b><span>Receso / feriado</span></div>
+        </div>
+        <div class="lg">
+          <div class="chip ev"></div>
+          <div><b>Evaluación</b><span>6 notas · RA1 + RA2</span></div>
+        </div>
+      </div>
+
+      <div class="months">
+        <section class="month">
+          <h2>Agosto <em>4 clases</em></h2>
+          <table>
+            <thead>
+              <tr>
+                <th>L</th>
+                <th>M</th>
+                <th>M</th>
+                <th>J</th>
+                <th>V</th>
+                <th>S</th>
+                <th>D</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="outside"><span class="dnum">1</span></td>
+                <td class="outside"><span class="dnum">2</span></td>
+              </tr>
+              <tr>
+                <td class="outside"><span class="dnum">3</span></td>
+                <td class="tt outside"><span class="dnum">4</span></td>
+                <td class="outside"><span class="dnum">5</span></td>
+                <td class="tt outside"><span class="dnum">6</span></td>
+                <td class="outside"><span class="dnum">7</span></td>
+                <td class="outside"><span class="dnum">8</span></td>
+                <td class="outside"><span class="dnum">9</span></td>
+              </tr>
+              <tr>
+                <td class="outside"><span class="dnum">10</span></td>
+                <td class="tt outside"><span class="dnum">11</span></td>
+                <td class="outside"><span class="dnum">12</span></td>
+                <td class="tt outside"><span class="dnum">13</span></td>
+                <td class="outside"><span class="dnum">14</span></td>
+                <td class="outside"><span class="dnum">15</span></td>
+                <td class="outside"><span class="dnum">16</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">17</span></td>
+                <td class="tt">
+                  <span class="dnum">18<i class="snum">S01</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">19</span></td>
+                <td class="tt">
+                  <span class="dnum">20<i class="snum">S02</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">21</span></td>
+                <td><span class="dnum">22</span></td>
+                <td><span class="dnum">23</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">24</span></td>
+                <td class="tt">
+                  <span class="dnum">25<i class="snum">S03</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">26</span></td>
+                <td class="tt">
+                  <span class="dnum">27<i class="snum">S04</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">28</span></td>
+                <td><span class="dnum">29</span></td>
+                <td><span class="dnum">30</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">31</span></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="month">
+          <h2>Septiembre <em>7 clases</em></h2>
+          <table>
+            <thead>
+              <tr>
+                <th>L</th>
+                <th>M</th>
+                <th>M</th>
+                <th>J</th>
+                <th>V</th>
+                <th>S</th>
+                <th>D</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="void"></td>
+                <td class="tt">
+                  <span class="dnum">1<i class="snum">S05</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">2</span></td>
+                <td class="tt">
+                  <span class="dnum">3<i class="snum">S06</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">4</span></td>
+                <td><span class="dnum">5</span></td>
+                <td><span class="dnum">6</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">7</span></td>
+                <td class="tt">
+                  <span class="dnum">8<i class="snum">S07</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">9</span></td>
+                <td class="tt">
+                  <span class="dnum">10<i class="snum">S08</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">11</span></td>
+                <td><span class="dnum">12</span></td>
+                <td><span class="dnum">13</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">14</span></td>
+                <td class="tt">
+                  <span class="dnum">15</span
+                  ><span class="blk off">Receso 18</span>
+                </td>
+                <td><span class="dnum">16</span></td>
+                <td class="tt">
+                  <span class="dnum">17</span
+                  ><span class="blk off">Receso 18</span>
+                </td>
+                <td><span class="dnum">18</span></td>
+                <td><span class="dnum">19</span></td>
+                <td><span class="dnum">20</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">21</span></td>
+                <td class="tt">
+                  <span class="dnum">22<i class="snum">S09</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">23</span></td>
+                <td class="tt">
+                  <span class="dnum">24<i class="snum">S10</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">25</span></td>
+                <td><span class="dnum">26</span></td>
+                <td><span class="dnum">27</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">28</span></td>
+                <td class="tt">
+                  <span class="dnum">29<i class="snum">S11</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">30</span></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="month">
+          <h2>Octubre <em>7 clases</em></h2>
+          <table>
+            <thead>
+              <tr>
+                <th>L</th>
+                <th>M</th>
+                <th>M</th>
+                <th>J</th>
+                <th>V</th>
+                <th>S</th>
+                <th>D</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="tt">
+                  <span class="dnum">1<i class="snum">S12</i></span
+                  ><span class="blk cls">Clase</span
+                  ><span class="blk ev"><b>RA1 · Avance 1</b>15%</span>
+                </td>
+                <td><span class="dnum">2</span></td>
+                <td><span class="dnum">3</span></td>
+                <td><span class="dnum">4</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">5</span></td>
+                <td class="tt">
+                  <span class="dnum">6<i class="snum">S13</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">7</span></td>
+                <td class="tt">
+                  <span class="dnum">8<i class="snum">S14</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">9</span></td>
+                <td><span class="dnum">10</span></td>
+                <td><span class="dnum">11</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">12</span></td>
+                <td class="tt">
+                  <span class="dnum">13<i class="snum">S15</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">14</span></td>
+                <td class="tt">
+                  <span class="dnum">15<i class="snum">S16</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">16</span></td>
+                <td><span class="dnum">17</span></td>
+                <td><span class="dnum">18</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">19</span></td>
+                <td class="tt">
+                  <span class="dnum">20<i class="snum">S17</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">21</span></td>
+                <td class="tt">
+                  <span class="dnum">22<i class="snum">S18</i></span
+                  ><span class="blk cls">Clase</span
+                  ><span class="blk ev"><b>RA1 · Avance 2</b>15%</span>
+                </td>
+                <td><span class="dnum">23</span></td>
+                <td><span class="dnum">24</span></td>
+                <td><span class="dnum">25</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">26</span></td>
+                <td class="tt">
+                  <span class="dnum">27</span
+                  ><span class="blk off">Vida Univ.</span>
+                </td>
+                <td><span class="dnum">28</span></td>
+                <td class="tt">
+                  <span class="dnum">29</span
+                  ><span class="blk off">Vida Univ.</span>
+                </td>
+                <td><span class="dnum">30</span></td>
+                <td><span class="dnum">31</span></td>
+                <td class="void"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="month">
+          <h2>Noviembre <em>8 clases</em></h2>
+          <table>
+            <thead>
+              <tr>
+                <th>L</th>
+                <th>M</th>
+                <th>M</th>
+                <th>J</th>
+                <th>V</th>
+                <th>S</th>
+                <th>D</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td><span class="dnum">1</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">2</span></td>
+                <td class="tt">
+                  <span class="dnum">3<i class="snum">S19</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">4</span></td>
+                <td class="tt">
+                  <span class="dnum">5<i class="snum">S20</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">6</span></td>
+                <td><span class="dnum">7</span></td>
+                <td><span class="dnum">8</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">9</span></td>
+                <td class="tt">
+                  <span class="dnum">10<i class="snum">S21</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">11</span></td>
+                <td class="tt">
+                  <span class="dnum">12<i class="snum">S22</i></span
+                  ><span class="blk cls">Clase</span
+                  ><span class="blk ev"><b>RA1 · Entrega Web</b>20%</span>
+                </td>
+                <td><span class="dnum">13</span></td>
+                <td><span class="dnum">14</span></td>
+                <td><span class="dnum">15</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">16</span></td>
+                <td class="tt">
+                  <span class="dnum">17<i class="snum">S23</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">18</span></td>
+                <td class="tt">
+                  <span class="dnum">19<i class="snum">S24</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">20</span></td>
+                <td><span class="dnum">21</span></td>
+                <td><span class="dnum">22</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">23</span></td>
+                <td class="tt">
+                  <span class="dnum">24<i class="snum">S25</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">25</span></td>
+                <td class="tt">
+                  <span class="dnum">26<i class="snum">S26</i></span
+                  ><span class="blk cls">Clase</span
+                  ><span class="blk ev"><b>RA2 · Avance 1</b>15%</span>
+                </td>
+                <td><span class="dnum">27</span></td>
+                <td><span class="dnum">28</span></td>
+                <td><span class="dnum">29</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">30</span></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section class="month">
+          <h2>Diciembre <em>7 clases</em></h2>
+          <table>
+            <thead>
+              <tr>
+                <th>L</th>
+                <th>M</th>
+                <th>M</th>
+                <th>J</th>
+                <th>V</th>
+                <th>S</th>
+                <th>D</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="void"></td>
+                <td class="tt">
+                  <span class="dnum">1<i class="snum">S27</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">2</span></td>
+                <td class="tt">
+                  <span class="dnum">3<i class="snum">S28</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">4</span></td>
+                <td><span class="dnum">5</span></td>
+                <td><span class="dnum">6</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">7</span></td>
+                <td class="tt">
+                  <span class="dnum">8</span
+                  ><span class="blk off">Feriado</span>
+                </td>
+                <td><span class="dnum">9</span></td>
+                <td class="tt">
+                  <span class="dnum">10<i class="snum">S29</i></span
+                  ><span class="blk cls">Clase</span
+                  ><span class="blk ev"><b>RA2 · Avance 2</b>15%</span>
+                </td>
+                <td><span class="dnum">11</span></td>
+                <td><span class="dnum">12</span></td>
+                <td><span class="dnum">13</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">14</span></td>
+                <td class="tt">
+                  <span class="dnum">15<i class="snum">S30</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">16</span></td>
+                <td class="tt">
+                  <span class="dnum">17<i class="snum">S31</i></span
+                  ><span class="blk cls">Clase</span
+                  ><span class="blk ev"><b>RA2 · Entrega Móvil</b>20%</span>
+                </td>
+                <td><span class="dnum">18</span></td>
+                <td><span class="dnum">19</span></td>
+                <td><span class="dnum">20</span></td>
+              </tr>
+              <tr>
+                <td><span class="dnum">21</span></td>
+                <td class="tt">
+                  <span class="dnum">22<i class="snum">S32</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td><span class="dnum">23</span></td>
+                <td class="tt">
+                  <span class="dnum">24<i class="snum">S33</i></span
+                  ><span class="blk cls">Clase</span>
+                </td>
+                <td class="outside"><span class="dnum">25</span></td>
+                <td class="outside"><span class="dnum">26</span></td>
+                <td class="outside"><span class="dnum">27</span></td>
+              </tr>
+              <tr>
+                <td class="outside"><span class="dnum">28</span></td>
+                <td class="tt outside"><span class="dnum">29</span></td>
+                <td class="outside"><span class="dnum">30</span></td>
+                <td class="tt outside"><span class="dnum">31</span></td>
+                <td class="void"></td>
+                <td class="void"></td>
+                <td class="void"></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <!-- <div class="notes"> -->
+      <!--   <h3>Puntos a vigilar</h3> -->
+      <!--   <ul> -->
+      <!--     <li> -->
+      <!--       <b -->
+      <!--         >La Semana Vida Universitaria (26–30 oct) te cuesta dos sesiones -->
+      <!--         seguidas:</b -->
+      <!--       > -->
+      <!--       martes 27 y jueves 29. El decreto dice explícitamente que no -->
+      <!--       considera clases regulares ni evaluaciones, así que no puedes -->
+      <!--       agendar prueba esa semana. Con el receso de Fiestas Patrias son -->
+      <!--       cuatro sesiones perdidas en semanas completas. -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--       <b>El martes 8 de diciembre es feriado legal</b> (Inmaculada -->
+      <!--       Concepción). Cae dentro del periodo lectivo, así que no aparece -->
+      <!--       marcado en el decreto: lo tienes que descontar tú. -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--       <b>La semana de aniversario (24–28 ago) corrió normal.</b> Las -->
+      <!--       sesiones del martes 25 y jueves 27 quedaron dictadas, así que el -->
+      <!--       semestre parte con las 4 primeras clases al día y sin deuda de -->
+      <!--       contenidos. -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--       <b -->
+      <!--         >El jueves 24 de diciembre es el último día del periodo lectivo y -->
+      <!--         es Nochebuena.</b -->
+      <!--       > -->
+      <!--       Asistencia real cercana a cero. Si necesitas ese bloque para -->
+      <!--       evaluación, la última fecha operativa es el jueves 17. -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--       <b>Ventana de revisión institucional 12–16 de octubre:</b> se revisa -->
+      <!--       el ingreso de calificaciones en -->
+      <!--       <code>docencia.ulagos.cl/notas</code> y el registro de asistencia en -->
+      <!--       <code>asistencia.ulagos.cl</code> para detectar estudiantes en -->
+      <!--       riesgo. El Avance 1 del 1 de octubre deja tres sesiones de margen -->
+      <!--       para corregir y cargar antes del lunes 12. -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--       <b>La estructura de notas se cierra el viernes 4 de septiembre.</b> -->
+      <!--       Es apenas la sesión 7: las seis fechas y sus ponderaciones tienen -->
+      <!--       que estar cargadas antes de esa fecha. -->
+      <!--     </li> -->
+      <!--     <li> -->
+      <!--       <b>Cierre de actas: 15 de enero de 2027.</b> El periodo lectivo -->
+      <!--       termina el 24 de diciembre, así que la corrección final cae en plena -->
+      <!--       temporada de vacaciones. -->
+      <!--     </li> -->
+      <!--   </ul> -->
+      <!-- </div> -->
+
+      <footer>
+        Fuente: Decreto Universitario DU-CPO-2025-04766, Calendario Académico
+        2026 ULagos.
+      </footer>
+    </div>
+  </body>
+</html>
