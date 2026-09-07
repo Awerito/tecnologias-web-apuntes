@@ -1,7 +1,7 @@
 ---
 title: "Introducción a React"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "07 de septiembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -15,22 +15,22 @@ colorlinks: true
 
 ---
 
-# Node.js y npm/yarn
+# Node.js y npm/pnpm
 
 - **Node.js**: entorno para ejecutar JavaScript fuera del navegador.  
 - Necesario para instalar dependencias y correr herramientas modernas.  
 - **npm**: gestor de paquetes oficial de Node.  
-- **yarn**: alternativa más rápida y con mejoras en UX.  
+- **pnpm**: alternativa más rápida y que ahorra espacio en disco.  
 
 ```bash
 # instalar dependencias con npm
 npm install
 
-# instalar alternativa yarn
-npm install --global yarn
+# instalar alternativa pnpm
+npx get-pnpm
 
-# instalar dependencias con yarn
-yarn
+# instalar dependencias con pnpm
+pnpm install
 ````
 
 ---
@@ -43,12 +43,39 @@ yarn
 
 ```bash
 # crear un proyecto react con vite
-yarn create vite nombre-proyecto
+pnpm create vite nombre-proyecto
 ```
 
 ---
 
 # React crudo
+
+```bash
+# crear el proyecto sin plugin de react
+mkdir react-crudo && cd react-crudo
+pnpm init
+pnpm add react react-dom
+pnpm add -D vite
+```
+
+---
+
+# index.html
+
+```html
+<!doctype html>
+<html lang="es">
+  <head><meta charset="UTF-8" /><title>React crudo</title></head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
+```
+
+---
+
+# main.js
 
 ```js
 import React from "react";
@@ -64,21 +91,28 @@ root.render(React.createElement(App));
 
 ---
 
+# Correr el proyecto
+
+```bash
+pnpm vite
+```
+
+* Sin plugin de React no hay JSX, basta `.js`.
+* `React.createElement(tipo, props, hijos)`.
+
+---
+
 # React con JSX
 
 ```js
-import React from "react";
-import { createRoot } from "react-dom/client";
-
 function App() {
   return <h1>Hola React con JSX</h1>;
 }
 
-const root = createRoot(document.getElementById("root"));
 root.render(<App />);
 ```
 
-* JSX → sintaxis similar a HTML, pero en JavaScript.
+* JSX es sintaxis similar a HTML, pero en JavaScript.
 * El transpiler lo transforma a `React.createElement`.
 
 ---
@@ -205,12 +239,12 @@ Referir a ejemplo en
 
 # Resumen
 
-* Node.js y yarn/npm: base del ecosistema.
+* Node.js y pnpm/npm: base del ecosistema.
 * Vite: crear y correr proyectos rápidamente.
 * JSX simplifica la creación de elementos.
 * Componentes = funciones puras + props.
 * `useState`: primer hook para manejar estado.
-* Listas y eventos → ya estamos listos para proyectos más grandes.
+* Con listas y eventos ya estamos listos para proyectos más grandes.
 
 ---
 
