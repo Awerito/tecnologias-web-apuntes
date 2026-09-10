@@ -1,7 +1,7 @@
 ---
 title: "React: Componentes, Props y Hooks"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "10 de septiembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -182,7 +182,7 @@ function App() {
 
 * Cuando un dato debe viajar de un componente **padre** hasta un **nieto** pasando por hijos intermedios.
 * A veces obliga a pasar props que no se usan en el medio.
-* Problema común en apps reales → más adelante se resuelve con **Context**.
+* Problema común en apps reales, más adelante se resuelve con **Context**.
 
 ---
 
@@ -256,7 +256,7 @@ Referir a ejemplo en
 * **Props**: parámetros inmutables para personalizar componentes.
 * **useState**: manejar estado local.
 * **Eventos**: funciones que reaccionan a la interacción.
-* **Prop drilling**: props que viajan en cadena → motivación para aprender Context más adelante.
+* **Prop drilling**: props que viajan en cadena, motivación para aprender Context más adelante.
 * **Lifting state up:** estado sube al padre para ser compartido por varios hijos.
 
 ---

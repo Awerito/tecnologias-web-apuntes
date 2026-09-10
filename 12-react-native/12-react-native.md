@@ -1,7 +1,7 @@
 ---
 title: "React Native: Introducción y Setup"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "10 de septiembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -55,7 +55,7 @@ nativo.
 ## Requisitos técnicos
 
 * **Node.js ≥ 24.x**
-* **Yarn** (el gestor de dependencias del ramo)
+* **npm** (viene incluido con Node.js)
 * Teléfono Android o iPhone con la app **Expo Go** instalada
 * Conexión estable en la misma red Wi-Fi que el computador
 
@@ -72,50 +72,25 @@ nativo.
 * **Expo** simplifica la creación y ejecución de apps sin instalar SDKs
 nativos.
 * Permite crear, ejecutar y depurar en tiempo real.
-* El comando `yarn start` abre un servidor con un **código QR** para probar la
+* El comando `npm start` abre un servidor con un **código QR** para probar la
 app en el teléfono.
 * Basado en la documentación oficial:
 [docs.expo.dev/get-started/set-up-your-environment](https://docs.expo.dev/get-started/set-up-your-environment/)
 
 ---
 
-# Creación del proyecto con Yarn
+# Creación del proyecto
 
 ## Comandos iniciales
 
 ```bash
-yarn create expo <nombre-del-proyecto>
+npm create expo <nombre-del-proyecto>
 cd <nombre-del-proyecto>
-yarn start
+npm start
 ```
 
 * Abre el panel de desarrollo de Expo en el navegador.
 * Escanea el **QR** con la app **Expo Go**.
-
----
-
-# Configuración de Yarn
-
-## Ajuste necesario para React Native
-
-* React Native y Expo no funcionan correctamente con **Plug’n’Play (PnP)** de
-Yarn 2+.
-* Se debe forzar el linker tradicional agregando un archivo `.yarnrc.yml` con
-el siguiente contenido:
-
-```yaml
-nodeLinker: node-modules
-```
-
-* En **Windows**:
-
-  1. Abre PowerShell o CMD en la carpeta del proyecto.
-  2. Crea (si no existe) el archivo `.yarnrc.yml`.
-  3. Agrega la línea `nodeLinker: node-modules`.
-  4. Ejecuta `yarn install`.
-
-> Esto evita que Expo o React Native “no encuentren” las dependencias, un error
-> común con Yarn moderno.
 
 ---
 
@@ -194,7 +169,7 @@ const styles = StyleSheet.create({
 
 1. React Native combina React y desarrollo móvil nativo.
 2. Expo ofrece un entorno rápido y multiplataforma para iniciar.
-3. Con Yarn y la configuración correcta, el flujo es estable y simple.
+3. Con npm el flujo es estable y simple.
 4. Próxima clase: **estilos, Flexbox y NativeWind**.
 
 ---
@@ -206,8 +181,6 @@ const styles = StyleSheet.create({
 * [Documentación Expo](https://docs.expo.dev/)
 * [Expo Go en Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent)
 * [Expo Go en App Store](https://apps.apple.com/app/expo-go/id982107779)
-
-> Tip: `yarn start --tunnel` evita bloqueos de red o firewall institucional.
 
 ---
 

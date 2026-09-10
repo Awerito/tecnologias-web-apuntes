@@ -1,7 +1,7 @@
 ---
 title: "React Build: Construyendo y Desplegando Aplicaciones"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "10 de septiembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -22,7 +22,7 @@ servidores estáticos.
 
 ## Comando base
 ```bash
-yarn build
+pnpm build
 ````
 
 * Genera la carpeta `dist/` con archivos listos para producción.
@@ -54,7 +54,7 @@ dist/
 ## Comando de previsualización
 
 ```bash
-yarn preview
+pnpm preview
 ```
 
 * Inicia un servidor local (por defecto en `http://localhost:4173`).
@@ -109,7 +109,7 @@ yarn preview
 
 ## Ajustes iniciales
 
-* **Build command:** `yarn build`
+* **Build command:** `pnpm build`
 * **Publish directory:** `dist`
 * Netlify detecta automáticamente que es un proyecto Vite/React.
 * Puedes añadir variables en **Site settings → Environment variables**.
@@ -139,7 +139,7 @@ usuario.
 
 * Cada vez que haces **push a main** o **merge a PR**, Netlify:
 
-  1. Ejecuta `yarn build`
+  1. Ejecuta `pnpm build`
   2. Publica los nuevos archivos en el dominio
 * Puedes revertir a versiones anteriores desde el panel (“Deploys → Rollback”).
 
@@ -151,9 +151,9 @@ usuario.
 
 | Etapa      | Herramienta      | Resultado                       |
 | ---------- | ---------------- | ------------------------------- |
-| Desarrollo | `yarn dev`       | Hot Reload, entorno local       |
-| Build      | `yarn build`     | Archivos minificados en `dist/` |
-| Preview    | `yarn preview`   | Simula entorno productivo       |
+| Desarrollo | `pnpm dev`       | Hot Reload, entorno local       |
+| Build      | `pnpm build`     | Archivos minificados en `dist/` |
+| Preview    | `pnpm preview`   | Simula entorno productivo       |
 | Deploy     | Servicio elegido | Sitio público online            |
 
 ---
@@ -171,7 +171,7 @@ usuario.
 
 1. El build convierte tu código React en un sitio optimizado.
 2. Servicios como Netlify automatizan el deploy y CI/CD con un click.
-3. Revisión previa con `yarn preview` evita errores comunes.
+3. Revisión previa con `pnpm preview` evita errores comunes.
 4. Las variables `VITE_` son la única forma de pasar configuración al cliente.
 
 ---

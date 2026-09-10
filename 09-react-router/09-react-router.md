@@ -1,7 +1,7 @@
 ---
 title: "React Router: Navegación en SPAs"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "10 de septiembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -23,7 +23,7 @@ colorlinks: true
 * **React Router** permite rutas declarativas dentro de una SPA.
 
 ```bash
-yarn add react-router-dom
+pnpm add react-router-dom
 ```
 
 ---

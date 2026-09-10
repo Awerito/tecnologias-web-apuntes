@@ -1,7 +1,7 @@
 ---
 title: "React: Fetch y manejo de carga"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "10 de septiembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -19,7 +19,7 @@ colorlinks: true
 # `fetch` (idea general)
 
 * API nativa para peticiones HTTP.
-* Retorna *Promise* → `.then()`.
+* Retorna *Promise*: `.then()`.
 
 > Ojo: códigos 4xx/5xx no lanzan error por sí solos.
 

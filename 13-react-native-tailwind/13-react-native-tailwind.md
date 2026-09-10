@@ -1,7 +1,7 @@
 ---
 title: "React Native + Tailwind (NativeWind)"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "10 de septiembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -20,7 +20,7 @@ colorlinks: true
 * En vez de configurar todo a mano, usaremos la plantilla oficial:
 
 ```bash
-npx rn-new --nativewind --yarn
+npx rn-new --nativewind --npm
 ```
 
 * Elegir un nombre de proyecto (ej: `hello-rn-nativewind`).
@@ -82,12 +82,12 @@ export default function App() {
 Desde la carpeta del proyecto:
 
 ```bash
-yarn start
+npm start
 ```
 
 * Se abre el panel de Expo Dev Tools.
 * Escanear el código QR con **Expo Go**.
-* Si algo se rompe tras editar, hacer **Reload** desde la app o reiniciar `yarn start`.
+* Si algo se rompe tras editar, hacer **Reload** desde la app o reiniciar `npm start`.
 
 ---
 
@@ -185,7 +185,7 @@ export default function App() {
 
 # Resumen
 
-* Usamos `npx rn-new --nativewind --yarn` para generar un proyecto Expo con:
+* Usamos `npx rn-new --nativewind --npm` para generar un proyecto Expo con:
 
   * NativeWind
   * Tailwind v3

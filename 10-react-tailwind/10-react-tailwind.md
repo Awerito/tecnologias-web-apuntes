@@ -1,7 +1,7 @@
 ---
 title: "React + Tailwind"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "10 de septiembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -19,9 +19,9 @@ colorlinks: true
 # Creación del proyecto
 
 ```bash
-yarn create vite react-tailwind-demo --template react-swc
-cd react-tailwind-demo && yarn
-yarn add tailwindcss @tailwindcss/vite
+pnpm create vite react-tailwind-demo --template react-swc
+cd react-tailwind-demo && pnpm install
+pnpm add tailwindcss @tailwindcss/vite
 ```
 
 ---

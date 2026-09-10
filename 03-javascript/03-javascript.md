@@ -1,7 +1,7 @@
 ---
 title: "Clase Básica de JavaScript (ES6) — Bases para React"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "10 de septiembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -20,7 +20,7 @@ colorlinks: true
 - Corre en navegador y en Node.js.
 - Tipado dinámico.
 - Primitivos: string, number, boolean, null, undefined, bigint, symbol.
-- Objetos, arrays y funciones → por referencia.
+- Objetos, arrays y funciones: por referencia.
 
 ---
 
@@ -59,7 +59,7 @@ Boolean("false") // true
 * Expresión: `const f = function(a,b){...}`
 * Arrow: `const f = (a,b) => a+b`
 
-Arrow tiene `this` léxico → clave en React.
+Arrow tiene `this` léxico, clave en React.
 
 ---
 
@@ -117,7 +117,7 @@ const updated = { ...settings, timeout:5000 };
 
 # Arrays funcionales
 
-* map: transforma → nuevo array.
+* map: transforma a nuevo array.
 * filter: filtra por condición.
 * reduce: acumula a un valor.
 
@@ -150,8 +150,8 @@ const byAge = users.reduce((acc,u) => {
 
 # Cortocircuito lógico
 
-* `cond || valor` → por defecto.
-* `cond && expr` → condicional.
+* `cond || valor`: por defecto.
+* `cond && expr`: condicional.
 
 ```js
 const title = input || "Sin título";
@@ -181,7 +181,7 @@ En React: `cond && <Componente />`.
 
 # Puente hacia React
 
-* Funciones puras → componentes.
+* Funciones puras: componentes.
 * Props \~ parámetros inmutables.
 * Estado \~ closures (React lo gestiona).
 * Render condicional con `&&` o `?:`.
