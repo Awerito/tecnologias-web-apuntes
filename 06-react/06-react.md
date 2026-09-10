@@ -57,11 +57,11 @@ function App() {
 * Son **inmutables**: no deben modificarse dentro del componente.
 
 ```js
-function Card({ title, body }) {
+function Product({ name, price }) {
   return (
     <div className="card">
-      <h3>{title}</h3>
-      <p>{body}</p>
+      <h3>{name}</h3>
+      <p>${price}</p>
     </div>
   );
 }
@@ -70,15 +70,12 @@ function Card({ title, body }) {
 
 # Props
 
-* Los **props** son como los parámetros de una función.
-* Son **inmutables**: no deben modificarse dentro del componente.
-
 ```js
 function App() {
   return (
     <div>
-      <Card title="Intro a JS" body="Variables y funciones" />
-      <Card title="React" body="Estado y componentes" />
+      <Product name="Espresso" price={2.5} />
+      <Product name="Latte" price={3.8} />
     </div>
   );
 }
@@ -89,19 +86,15 @@ function App() {
 # Estado con useState
 
 * `useState` crea un valor **reactivo** y una función para actualizarlo.
-* React vuelve a renderizar el componente cuando el estado cambia.
+* El `input` recibe `value` del estado y lo actualiza con `onChange`.
 
 ```js
 import { useState } from "react";
 
-function Counter({ initial }) {
-  const [count, setCount] = useState(initial);
-  return (
-    <div>
-      <p>Valor: {count}</p>
-      <button onClick={() => setCount(count + 1)}>+</button>
-    </div>
-  );
+function Quantity({ initial }) {
+  const [quantity, setQuantity] = useState(initial);
+  const update = (e) => setQuantity(Number(e.target.value));
+  return <input type="number" value={quantity} onChange={update} />;
 }
 ```
 
@@ -117,8 +110,8 @@ function Counter({ initial }) {
 function App() {
   return (
     <div>
-      <Counter initial={0} />
-      <Counter initial={10} />
+      <Quantity initial={1} />
+      <Quantity initial={5} />
     </div>
   );
 }
@@ -131,10 +124,11 @@ function App() {
 * Cada elemento necesita una prop **key** única.
 
 ```js
+// Base de datos falsa
 const tasks = [
   { id: 1, text: "Leer", done: false },
   { id: 2, text: "Ejercitar", done: true }
-]; # Base de Datos Falsa
+];
 ```
 
 ---
@@ -215,17 +209,33 @@ function App() {
 # Lifting state up
 
 ```js
-function Counter({ value, onChange }) {
-  return (
-    <button onClick={() => onChange(value + 1)}> {value} </button>
-  );
+function Quantity({ value, onChange }) {
+  const update = (e) => onChange(Number(e.target.value));
+  return <input type="number" value={value} onChange={update} />;
 }
 function App() {
-  const [count, setCount] = useState(0);
+  const [total, setTotal] = useState(0);
   return (
     <div>
-      <Counter value={count} onChange={setCount} />
-      <Counter value={count} onChange={setCount} />
+      <Quantity value={total} onChange={setTotal} />
+      <Quantity value={total} onChange={setTotal} />
+    </div>
+  );
+}
+```
+---
+
+# Lifting state up
+
+```js
+function App() {
+  const [espresso, setEspresso] = useState(0);
+  const [latte, setLatte] = useState(0);
+  return (
+    <div>
+      <Quantity value={espresso} onChange={setEspresso} />
+      <Quantity value={latte} onChange={setLatte} />
+      <p>Total: {espresso + latte}</p>
     </div>
   );
 }
