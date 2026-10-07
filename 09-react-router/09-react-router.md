@@ -1,7 +1,7 @@
 ---
 title: "React Router: Navegación en SPAs"
 author: "Diego Muñoz"
-date: "10 de septiembre de 2026"
+date: "07 de octubre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -16,6 +16,42 @@ colorlinks: true
 
 ---
 
+# Aplicación SPA
+
+* **Single Page Application**: el servidor entrega un solo HTML.
+* Todo lo demás lo dibuja JavaScript en el navegador.
+* Vite genera ese único HTML y React se monta en el `div` raíz.
+
+```html
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+```
+
+---
+
+# Navegación sin React Router
+
+* Un estado decide qué pantalla se muestra. La URL nunca cambia.
+
+```jsx
+import { useState } from "react";
+export default function App() {
+  const [screen, setScreen] = useState("A");
+  return (
+    <>
+      <button onClick={() => setScreen("A")}>A</button>
+      <button onClick={() => setScreen("B")}>B</button>
+      {screen === "A" && <h2>Pantalla A</h2>}
+      {screen === "B" && <h2>Pantalla B</h2>}
+    </>
+  );
+}
+```
+
+---
+
 # Motivación de React Router
 
 * React solo muestra **un componente raíz** (`App`).
@@ -23,7 +59,7 @@ colorlinks: true
 * **React Router** permite rutas declarativas dentro de una SPA.
 
 ```bash
-pnpm add react-router-dom
+pnpm add react-router
 ```
 
 ---
@@ -43,7 +79,7 @@ pnpm add react-router-dom
 # Configuración inicial (Router + Routes)
 
 ```js
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
 
@@ -85,7 +121,7 @@ export default function About() {
 * Cambia la URL sin recargar la página.
 
 ```js
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export default function NavBar() {
   return (
@@ -102,7 +138,7 @@ export default function NavBar() {
 # Integrar la barra de navegación
 
 ```js
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -136,7 +172,7 @@ export default function App() {
 
 ```js
 // pages/User.jsx
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 
 export default function User() {
   const { id } = useParams();
@@ -154,7 +190,7 @@ export default function User() {
 * `useNavigate()` permite redirigir desde código.
 
 ```js
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -182,21 +218,14 @@ export default function Login() {
 
 ```
 src/
- ├─ pages/
- │   ├─ Home.jsx
- │   ├─ About.jsx
- │   └─ User.jsx
- ├─ components/
- │   └─ NavBar.jsx
- └─ App.jsx
+|-- pages/
+|   |-- Home.jsx
+|   |-- About.jsx
+|   `-- User.jsx
+|-- components/
+|   `-- NavBar.jsx
+`-- App.jsx
 ```
-
----
-
-# Proyecto de ejemplo
-
-Referir a ejemplo en
-[GitHub](https://github.com/Awerito/twm-ejemplos/tree/master/09-react-router).
 
 ---
 
