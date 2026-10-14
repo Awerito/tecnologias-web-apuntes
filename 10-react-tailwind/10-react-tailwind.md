@@ -1,7 +1,7 @@
 ---
 title: "React + Tailwind"
 author: "Diego Muñoz"
-date: "10 de septiembre de 2026"
+date: "14 de octubre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -19,20 +19,20 @@ colorlinks: true
 # Creación del proyecto
 
 ```bash
-pnpm create vite react-tailwind-demo --template react-swc
+pnpm create vite react-tailwind-demo --template react
 cd react-tailwind-demo && pnpm install
 pnpm add tailwindcss @tailwindcss/vite
 ```
 
 ---
 
-# Setup mínimo (Vite + Tailwind)
+# Plugin de Vite
 
 Editamos `vite.config.js`:
 
 ```js
+import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
 import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
@@ -41,7 +41,11 @@ export default defineConfig({
 });
 ```
 
-Añadimos a `src/index.css` lo siguiente:
+---
+
+# Importar Tailwind
+
+Reemplazamos el contenido de `src/index.css` y borramos `src/App.css`:
 
 ```css
 @import "tailwindcss";
@@ -49,26 +53,22 @@ Añadimos a `src/index.css` lo siguiente:
 
 ---
 
-# Arranque básico
+# Correr el proyecto
 
-`index.html`:
-
-```html
-<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100">
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+```bash
+pnpm dev
 ```
 
-`src/main.jsx`:
+---
 
-```js
-import React from "react";
-import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App.jsx";
+# Hello world
 
-createRoot(document.getElementById("root")).render(<App />);
+Reemplazamos `src/App.jsx`:
+
+```jsx
+export default function App() {
+  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+}
 ```
 
 ---
@@ -87,7 +87,7 @@ createRoot(document.getElementById("root")).render(<App />);
 
 ---
 
-# Diseño responsivo (ejemplo)
+# Diseño responsivo
 
 \footnotesize
 ```jsx
@@ -168,6 +168,17 @@ export default function Navbar({onToggleTheme}){
     </header>
   );
 }
+```
+
+---
+
+# Dark mode manual
+
+Tailwind aplica `dark:` según la preferencia del sistema.
+Para alternarlo con una clase, añadimos a `src/index.css`:
+
+```css
+@custom-variant dark (&:where(.dark, .dark *));
 ```
 
 ---
