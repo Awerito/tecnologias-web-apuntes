@@ -157,12 +157,14 @@ export default function Card({title,children,footer}){
 // src/components/Navbar.jsx
 export default function Navbar({onToggleTheme}){
   return (
-    <header className="sticky top-0 bg-white/80 backdrop-blur border-b">
+    <header className="sticky top-0 border-b backdrop-blur
+                       bg-white/80 dark:bg-gray-900/80">
       <div className="max-w-4xl mx-auto h-10 px-3 flex items-center justify-between">
         <b>React + Tailwind</b>
         <nav className="flex gap-2 text-sm">
           <a href="#">Home</a><a href="#">Docs</a>
-          <button onClick={onToggleTheme} className="px-2 py-1 rounded border">Theme</button>
+          <button onClick={onToggleTheme}
+            className="px-2 py-1 rounded border">Theme</button>
         </nav>
       </div>
     </header>
@@ -193,7 +195,8 @@ import Card from "./components/Card";
 export default function App(){
   const t=()=>document.documentElement.classList.toggle("dark");
   return (
-    <>
+    <div className="min-h-screen bg-white text-gray-900
+                    dark:bg-gray-950 dark:text-gray-100">
       <Navbar onToggleTheme={t}/>
       <main className="max-w-4xl mx-auto px-3 py-4 grid gap-3 sm:grid-cols-2">
         <Card title="A"
@@ -201,7 +204,7 @@ export default function App(){
         <Card title="B"
           footer={<Button className="bg-emerald-600 text-white">Go</Button>}>…</Card>
       </main>
-    </>
+    </div>
   );
 }
 ```
