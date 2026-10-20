@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Efecto estética-usabilidad</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; padding: 72px 56px 36px; box-sizing: border-box; display: flex; flex-direction: column; }
+  .half.bad { border-right: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 24px; padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 18px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .form { flex: 1; width: 400px; margin: 0 auto; }
+  h2 { margin: 0 0 16px; font-size: 26px; }
+  label { display: block; margin-bottom: 6px; font-weight: 600; }
+  .field { display: block; border-radius: 8px; padding: 0 14px; box-sizing: border-box; background: #ffffff; }
+  .btn { display: block; border-radius: 8px; font-size: 20px; font-weight: 600; color: #ffffff; text-align: center; line-height: 48px; }
+  .link { display: block; }
+  .caption { margin-top: 12px; font-size: 22px; color: #6b7280; text-align: center; }
+
+  .bad h2 { margin-left: 18px; }
+  .bad .l1 { font-size: 15px; }
+  .bad .l2 { font-size: 22px; margin-left: 10px; }
+  .bad .f1 { width: 300px; height: 40px; line-height: 34px; border: 3px solid #111827; margin-bottom: 8px; }
+  .bad .f2 { width: 400px; height: 54px; line-height: 52px; border: 1px solid #e5e7eb; margin-bottom: 30px; }
+  .bad .btn { width: 220px; background: #7c3aed; margin-bottom: 14px; }
+  .bad .link { font-size: 15px; color: #15803d; margin-left: 24px; }
+
+  .good .row { margin-bottom: 16px; }
+  .good .field { width: 400px; height: 48px; line-height: 46px; border: 1px solid #e5e7eb; }
+  .good .btn { width: 400px; background: #2563eb; margin-bottom: 16px; }
+  .good .link { color: #2563eb; text-decoration: underline; text-align: center; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="form">
+      <h2>Iniciar sesión</h2>
+      <label class="l1">Correo</label>
+      <span class="field f1"></span>
+      <label class="l2">Contraseña</label>
+      <span class="field f2"></span>
+      <span class="btn">Entrar</span>
+      <span class="link">Olvidé mi contraseña</span>
+    </div>
+    <p class="caption">Funciona igual, pero se percibe difícil y poco confiable</p>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="form">
+      <h2>Iniciar sesión</h2>
+      <div class="row"><label>Correo</label><span class="field"></span></div>
+      <div class="row"><label>Contraseña</label><span class="field"></span></div>
+      <span class="btn">Entrar</span>
+      <span class="link">Olvidé mi contraseña</span>
+    </div>
+    <p class="caption">Se percibe fácil y el usuario perdona errores menores</p>
+  </div>
+</div>
+</body>
+</html>

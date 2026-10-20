@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Visual hierarchy</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; width: 1200px; height: 640px; overflow: hidden; }
+  .compare { display: flex; height: 640px; }
+  .half { flex: 1; padding: 28px 32px; display: flex; flex-direction: column; }
+  .half + .half { border-left: 1px solid #e5e7eb; }
+  .badge { align-self: flex-start; padding: 4px 16px; border-radius: 999px; font-weight: 600; }
+  .bad { background: #fee2e2; color: #b91c1c; }
+  .good { background: #dcfce7; color: #15803d; }
+  .hero { margin-top: 48px; }
+  .flat p { font-size: 20px; font-weight: 400; margin: 0 0 14px; line-height: 1.4; }
+  .flat .buttons { display: flex; gap: 12px; margin-top: 20px; }
+  .button { display: inline-block; padding: 12px 24px; border-radius: 8px; background: #2563eb; color: #ffffff; font-weight: 600; font-size: 18px; }
+  .clear h1 { font-size: 44px; font-weight: 800; margin: 0 0 16px; line-height: 1.1; }
+  .clear .sub { font-size: 22px; color: #6b7280; margin: 0 0 40px; line-height: 1.4; }
+  .clear .buttons { display: flex; align-items: center; gap: 28px; }
+  .clear .button { padding: 14px 32px; font-size: 20px; }
+  .link { color: #2563eb; font-weight: 600; font-size: 20px; text-decoration: underline; }
+  .caption { margin-top: auto; color: #6b7280; font-size: 22px; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half">
+    <span class="badge bad">Mal</span>
+    <div class="hero flat">
+      <p>Entrega en 24 horas</p>
+      <p>Compra hoy y recibe mañana en todo Chile</p>
+      <p>Trabajamos con los principales couriers del país para que tu pedido llegue a tiempo, con seguimiento en línea y sin costo adicional en compras sobre $30.000.</p>
+      <div class="buttons">
+        <span class="button">Comprar ahora</span>
+        <span class="button">Ver demo</span>
+        <span class="button">Leer más</span>
+      </div>
+    </div>
+    <div class="caption">Todo pesa igual, nada destaca</div>
+  </div>
+  <div class="half">
+    <span class="badge good">Bien</span>
+    <div class="hero clear">
+      <h1>Entrega en 24 horas</h1>
+      <p class="sub">Compra hoy y recibe mañana en todo Chile</p>
+      <div class="buttons">
+        <span class="button">Comprar ahora</span>
+        <span class="link">Ver demo</span>
+      </div>
+    </div>
+    <div class="caption">Una acción principal, el resto acompaña</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Progress steps</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .half + .half { border-left: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 20px; padding: 4px 14px; border-radius: 999px; font-weight: 600; font-size: 16px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .caption { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; color: #6b7280; font-size: 20px; }
+  .page { width: 440px; }
+  .page h2 { margin: 0 0 16px; font-size: 22px; }
+  label { display: block; font-size: 16px; margin-bottom: 4px; font-weight: 500; }
+  .field { height: 40px; border: 1px solid #e5e7eb; border-radius: 6px; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; color: #6b7280; font-size: 16px; margin-bottom: 14px; }
+  .btn { height: 48px; border-radius: 8px; background: #2563eb; color: #ffffff; font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin-top: 6px; }
+  /* stepper */
+  .stepper { display: flex; align-items: flex-start; margin-bottom: 28px; }
+  .step { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; font-size: 15px; color: #6b7280; }
+  .circle { width: 32px; height: 32px; border-radius: 50%; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 15px; margin-bottom: 6px; background: #ffffff; border: 2px solid #e5e7eb; color: #6b7280; position: relative; z-index: 1; }
+  .step + .step::before { content: ""; position: absolute; top: 15px; right: 50%; width: 100%; height: 2px; background: #e5e7eb; }
+  .step.done + .step::before { background: #15803d; }
+  .done .circle { background: #15803d; border-color: #15803d; }
+  .done .circle::after { content: ""; width: 7px; height: 13px; border-right: 3px solid #ffffff; border-bottom: 3px solid #ffffff; transform: rotate(45deg); margin-top: -4px; }
+  .current .circle { background: #2563eb; border-color: #2563eb; color: #ffffff; }
+  .current { color: #111827; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="page">
+      <h2>Datos de envío</h2>
+      <label>Nombre completo</label>
+      <div class="field">Camila Rojas</div>
+      <label>Dirección</label>
+      <div class="field">Av. Providencia 1234</div>
+      <label>Comuna</label>
+      <div class="field">Providencia</div>
+      <div class="btn">Siguiente</div>
+    </div>
+    <div class="caption">No se sabe cuánto falta</div>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="page">
+      <div class="stepper">
+        <div class="step done"><span class="circle"></span>Carrito</div>
+        <div class="step current"><span class="circle">2</span>Envío</div>
+        <div class="step"><span class="circle">3</span>Pago</div>
+        <div class="step"><span class="circle">4</span>Confirmación</div>
+      </div>
+      <h2>Datos de envío</h2>
+      <label>Nombre completo</label>
+      <div class="field">Camila Rojas</div>
+      <label>Dirección</label>
+      <div class="field">Av. Providencia 1234</div>
+      <label>Comuna</label>
+      <div class="field">Providencia</div>
+      <div class="btn">Siguiente</div>
+    </div>
+    <div class="caption">Paso 2 de 4, el usuario ve el final</div>
+  </div>
+</div>
+</body>
+</html>

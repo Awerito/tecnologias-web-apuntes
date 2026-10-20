@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Consistencia interna</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; padding: 72px 24px 40px; box-sizing: border-box; display: flex; flex-direction: column; }
+  .half.bad { border-right: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 24px; padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 18px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .pages { display: flex; gap: 16px; justify-content: center; flex: 1; align-items: center; }
+  .page { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .page .label { font-size: 18px; color: #6b7280; }
+  .screen { position: relative; width: 170px; height: 300px; border: 1px solid #e5e7eb; border-radius: 10px; background: #ffffff; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column; }
+  .header { height: 40px; background: #f3f4f6; display: flex; align-items: center; padding: 0 12px; font-weight: 700; font-size: 16px; justify-content: center; }
+  .cart { position: absolute; display: flex; width: 26px; height: 26px; align-items: center; justify-content: center; border-radius: 6px; }
+  .cart svg { width: 20px; height: 20px; }
+  .cart.top-right { top: 7px; right: 10px; color: #2563eb; }
+  .cart.bottom-left { bottom: 10px; left: 10px; color: #6b7280; }
+  .cart.top-left { top: 7px; left: 10px; color: #111827; border: 1px solid #111827; }
+  .body { padding: 18px 14px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .ph { height: 10px; border-radius: 4px; background: #e5e7eb; }
+  .ph.short { width: 60%; }
+  .ph.block { height: 70px; background: #f3f4f6; }
+  .btn { margin-top: auto; font-size: 15px; font-weight: 600; text-align: center; padding: 9px 0; border-radius: 6px; }
+  .btn.filled { background: #2563eb; color: #ffffff; }
+  .btn.outline { border: 2px solid #15803d; color: #15803d; padding: 7px 0; }
+  .btn.text { color: #111827; text-decoration: underline; }
+  .caption { margin: 0; font-size: 22px; color: #6b7280; text-align: center; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 4h2l2.4 11h11.2l2-8H6"/><circle cx="9.5" cy="19.5" r="1.5"/><circle cx="17.5" cy="19.5" r="1.5"/>
+  </symbol>
+</svg>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="pages">
+      <div class="page">
+        <div class="screen">
+          <div class="header">Tienda</div>
+          <span class="cart top-right"><svg><use href="#cart"/></svg></span>
+          <div class="body">
+            <div class="ph block"></div>
+            <div class="ph"></div>
+            <div class="ph short"></div>
+            <div class="btn filled">Comprar</div>
+          </div>
+        </div>
+        <span class="label">Inicio</span>
+      </div>
+      <div class="page">
+        <div class="screen">
+          <div class="header">Tienda</div>
+          <span class="cart bottom-left"><svg><use href="#cart"/></svg></span>
+          <div class="body">
+            <div class="ph block"></div>
+            <div class="ph"></div>
+            <div class="ph short"></div>
+            <div class="btn outline" style="margin-bottom: 34px;">Comprar</div>
+          </div>
+        </div>
+        <span class="label">Producto</span>
+      </div>
+      <div class="page">
+        <div class="screen">
+          <div class="header">Tienda</div>
+          <span class="cart top-left"><svg><use href="#cart"/></svg></span>
+          <div class="body">
+            <div class="ph block"></div>
+            <div class="ph"></div>
+            <div class="ph short"></div>
+            <div class="btn text">Comprar</div>
+          </div>
+        </div>
+        <span class="label">Pago</span>
+      </div>
+    </div>
+    <p class="caption">El carrito y el botón cambian en cada página</p>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="pages">
+      <div class="page">
+        <div class="screen">
+          <div class="header">Tienda</div>
+          <span class="cart top-right"><svg><use href="#cart"/></svg></span>
+          <div class="body">
+            <div class="ph block"></div>
+            <div class="ph"></div>
+            <div class="ph short"></div>
+            <div class="btn filled">Comprar</div>
+          </div>
+        </div>
+        <span class="label">Inicio</span>
+      </div>
+      <div class="page">
+        <div class="screen">
+          <div class="header">Tienda</div>
+          <span class="cart top-right"><svg><use href="#cart"/></svg></span>
+          <div class="body">
+            <div class="ph block"></div>
+            <div class="ph"></div>
+            <div class="ph short"></div>
+            <div class="btn filled">Comprar</div>
+          </div>
+        </div>
+        <span class="label">Producto</span>
+      </div>
+      <div class="page">
+        <div class="screen">
+          <div class="header">Tienda</div>
+          <span class="cart top-right"><svg><use href="#cart"/></svg></span>
+          <div class="body">
+            <div class="ph block"></div>
+            <div class="ph"></div>
+            <div class="ph short"></div>
+            <div class="btn filled">Comprar</div>
+          </div>
+        </div>
+        <span class="label">Pago</span>
+      </div>
+    </div>
+    <p class="caption">Mismo elemento, mismo lugar, misma apariencia</p>
+  </div>
+</div>
+</body>
+</html>

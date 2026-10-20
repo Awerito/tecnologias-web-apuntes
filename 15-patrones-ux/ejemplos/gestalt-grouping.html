@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Gestalt grouping</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .half + .half { border-left: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 20px; padding: 4px 14px; border-radius: 999px; font-weight: 600; font-size: 16px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .caption { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; color: #6b7280; font-size: 20px; }
+  .form { width: 400px; }
+  .field { height: 40px; border: 1px solid #e5e7eb; border-radius: 6px; background: #ffffff; box-sizing: border-box; padding: 0 12px; display: flex; align-items: center; color: #6b7280; font-size: 16px; }
+  label { display: block; font-size: 17px; }
+  /* bad: label equidistant from the field above and below */
+  .bad .form label { margin: 24px 0; }
+  .bad .form .field { margin: 24px 0; }
+  /* good: label hugs its field, cards group */
+  .card { background: #f3f4f6; border-radius: 12px; padding: 16px 20px 20px; }
+  .card + .card { margin-top: 20px; }
+  .card h3 { margin: 0 0 12px; font-size: 18px; color: #111827; }
+  .good label { margin: 0 0 4px; font-weight: 500; }
+  .good .field { margin-bottom: 12px; }
+  .good .field:last-child { margin-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="form">
+      <label>Nombre</label>
+      <div class="field">Camila Rojas</div>
+      <label>Correo</label>
+      <div class="field">camila@ejemplo.cl</div>
+      <label>Calle</label>
+      <div class="field">Av. Providencia 1234</div>
+      <label>Ciudad</label>
+      <div class="field">Santiago</div>
+    </div>
+    <div class="caption">Espaciado uniforme, relación ambigua</div>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="form">
+      <div class="card">
+        <h3>Datos personales</h3>
+        <label>Nombre</label>
+        <div class="field">Camila Rojas</div>
+        <label>Correo</label>
+        <div class="field">camila@ejemplo.cl</div>
+      </div>
+      <div class="card">
+        <h3>Dirección</h3>
+        <label>Calle</label>
+        <div class="field">Av. Providencia 1234</div>
+        <label>Ciudad</label>
+        <div class="field">Santiago</div>
+      </div>
+    </div>
+    <div class="caption">Cercanía y región común agrupan</div>
+  </div>
+</div>
+</body>
+</html>

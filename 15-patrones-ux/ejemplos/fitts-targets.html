@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Fitts targets</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .half + .half { border-left: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 20px; padding: 4px 14px; border-radius: 999px; font-weight: 600; font-size: 16px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .caption { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; color: #6b7280; font-size: 20px; }
+  .modal { position: relative; width: 420px; height: 300px; box-sizing: border-box; padding: 28px; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); background: #ffffff; }
+  .modal h2 { margin: 0 0 12px; font-size: 22px; }
+  .modal p { margin: 0; color: #6b7280; font-size: 17px; line-height: 1.4; }
+  /* bad: tiny close, far apart text links */
+  .close-tiny { position: absolute; top: 8px; right: 8px; font-size: 12px; line-height: 12px; color: #6b7280; }
+  .target-hint { position: absolute; top: -8px; right: -8px; width: 44px; height: 44px; border: 2px dashed #b91c1c; border-radius: 4px; box-sizing: border-box; }
+  .target-label { position: absolute; top: -32px; right: -8px; font-size: 13px; color: #b91c1c; font-weight: 600; }
+  .bad .modal p { max-width: 240px; }
+  .link-tiny { position: absolute; font-size: 12px; color: #2563eb; text-decoration: underline; }
+  .link-cancel { top: 72px; right: 28px; }
+  .link-confirm { bottom: 16px; left: 28px; }
+  /* good: big close, adjacent buttons */
+  .close-big { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 8px; background: #f3f4f6; color: #111827; font-size: 22px; }
+  .actions { position: absolute; left: 28px; right: 28px; bottom: 28px; display: flex; gap: 12px; }
+  .btn { flex: 1; height: 48px; border-radius: 8px; font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+  .btn-primary { background: #2563eb; color: #ffffff; }
+  .btn-outline { border: 2px solid #2563eb; color: #2563eb; background: #ffffff; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="modal">
+      <span class="target-label">44 px</span>
+      <span class="target-hint"></span>
+      <span class="close-tiny">x</span>
+      <h2>Confirmar compra</h2>
+      <p>Se cobrarán $19.990 a tu tarjeta terminada en 4821.</p>
+      <span class="link-tiny link-cancel">Cancelar</span>
+      <span class="link-tiny link-confirm">Confirmar compra</span>
+    </div>
+    <div class="caption">Objetivos pequeños y lejanos</div>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="modal">
+      <span class="close-big">&times;</span>
+      <h2>Confirmar compra</h2>
+      <p>Se cobrarán $19.990 a tu tarjeta terminada en 4821.</p>
+      <div class="actions">
+        <span class="btn btn-primary">Confirmar compra</span>
+        <span class="btn btn-outline">Cancelar</span>
+      </div>
+    </div>
+    <div class="caption">Objetivos grandes, cerca y juntos</div>
+  </div>
+</div>
+</body>
+</html>

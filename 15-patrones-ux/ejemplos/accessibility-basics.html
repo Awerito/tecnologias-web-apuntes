@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Accesibilidad básica</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; padding: 100px 56px 36px; box-sizing: border-box; display: flex; flex-direction: column; }
+  .half.bad { border-right: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 24px; padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 18px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .form { flex: 1; width: 400px; margin: 0 auto; }
+  label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 20px; }
+  .field { display: block; height: 52px; border-radius: 8px; padding: 0 14px; box-sizing: border-box; line-height: 48px; font-size: 20px; border: 2px solid #b91c1c; }
+  .msg { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 17px; min-height: 24px; }
+  .btn { display: block; margin-top: 20px; border-radius: 8px; font-size: 20px; font-weight: 600; color: #ffffff; text-align: center; line-height: 48px; background: #2563eb; }
+  .contrast { margin: 0; font-size: 17px; color: #6b7280; text-align: center; }
+  .caption { margin-top: 8px; font-size: 22px; color: #6b7280; text-align: center; }
+
+  .bad label, .bad .msg { color: #b0b0b0; }
+  .bad .field { border-width: 1px; }
+
+  .good .field { outline: 3px solid #2563eb; outline-offset: 2px; }
+  .good .msg { color: #b91c1c; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="form">
+      <label>Correo</label>
+      <span class="field">ana@</span>
+      <span class="msg">Ingresa tu correo</span>
+      <span class="btn">Enviar</span>
+    </div>
+    <p class="contrast">Contraste del texto 2,2:1</p>
+    <p class="caption">Texto gris claro, error solo por color, foco invisible</p>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="form">
+      <label>Correo</label>
+      <span class="field">ana@</span>
+      <span class="msg"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b91c1c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2 21h20L12 3z"/><path d="M12 10v5"/><circle cx="12" cy="18" r="0.6" fill="#b91c1c"/></svg>Falta el dominio del correo</span>
+      <span class="btn">Enviar</span>
+    </div>
+    <p class="contrast">Contraste del texto 17,7:1</p>
+    <p class="caption">Contraste alto, error con texto e icono, foco visible</p>
+  </div>
+</div>
+</body>
+</html>

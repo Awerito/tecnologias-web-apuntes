@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Hick choices</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .half + .half { border-left: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 20px; padding: 4px 14px; border-radius: 999px; font-weight: 600; font-size: 16px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .caption { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; color: #6b7280; font-size: 20px; }
+  .panel { width: 440px; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; }
+  .panel h2 { margin: 0; padding: 14px 20px; font-size: 20px; border-bottom: 1px solid #e5e7eb; }
+  .row { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 32px; font-size: 17px; }
+  .row + .row { border-top: 1px solid #f3f4f6; }
+  .toggle { width: 34px; height: 18px; border-radius: 999px; background: #e5e7eb; position: relative; }
+  .toggle::after { content: ""; position: absolute; top: 2px; left: 2px; width: 14px; height: 14px; border-radius: 50%; background: #ffffff; }
+  .toggle.on { background: #2563eb; }
+  .toggle.on::after { left: 18px; }
+  /* good: grouped sections */
+  .good .row { height: 44px; }
+  .section { border-top: 1px solid #e5e7eb; }
+  .section-header { display: flex; align-items: center; justify-content: space-between; padding: 0 20px; height: 52px; font-weight: 600; background: #f3f4f6; }
+  .chevron { width: 10px; height: 10px; border-right: 2px solid #6b7280; border-bottom: 2px solid #6b7280; transform: rotate(-45deg); margin-right: 4px; }
+  .open .chevron { transform: rotate(45deg); margin-top: -4px; }
+  .section-body { padding-left: 16px; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="panel">
+      <h2>Configuración</h2>
+      <div class="row"><span>Notificaciones por correo</span><span class="toggle on"></span></div>
+      <div class="row"><span>Notificaciones push</span><span class="toggle"></span></div>
+      <div class="row"><span>Tema oscuro</span><span class="toggle"></span></div>
+      <div class="row"><span>Idioma</span><span class="toggle on"></span></div>
+      <div class="row"><span>Moneda</span><span class="toggle on"></span></div>
+      <div class="row"><span>Zona horaria</span><span class="toggle"></span></div>
+      <div class="row"><span>Autoguardado</span><span class="toggle on"></span></div>
+      <div class="row"><span>Sincronizar</span><span class="toggle"></span></div>
+      <div class="row"><span>Privacidad del perfil</span><span class="toggle on"></span></div>
+      <div class="row"><span>Historial</span><span class="toggle"></span></div>
+      <div class="row"><span>Descargas</span><span class="toggle on"></span></div>
+      <div class="row"><span>Accesos directos</span><span class="toggle"></span></div>
+      <div class="row"><span>Sonidos</span><span class="toggle on"></span></div>
+      <div class="row"><span>Vibración</span><span class="toggle"></span></div>
+    </div>
+    <div class="caption">Catorce decisiones a la vez</div>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="panel">
+      <h2>Configuración</h2>
+      <div class="section open">
+        <div class="section-header"><span>Notificaciones</span><span class="chevron"></span></div>
+        <div class="section-body">
+          <div class="row"><span>Notificaciones por correo</span><span class="toggle on"></span></div>
+          <div class="row"><span>Notificaciones push</span><span class="toggle"></span></div>
+        </div>
+      </div>
+      <div class="section"><div class="section-header"><span>Apariencia</span><span class="chevron"></span></div></div>
+      <div class="section"><div class="section-header"><span>Región</span><span class="chevron"></span></div></div>
+      <div class="section"><div class="section-header"><span>Privacidad</span><span class="chevron"></span></div></div>
+    </div>
+    <div class="caption">Cuatro grupos, detalle bajo demanda</div>
+  </div>
+</div>
+</body>
+</html>

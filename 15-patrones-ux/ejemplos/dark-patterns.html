@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Dark patterns</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .half + .half { border-left: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 20px; padding: 4px 14px; border-radius: 999px; font-weight: 600; font-size: 16px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .caption { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; color: #6b7280; font-size: 20px; }
+  .modal { width: 400px; box-sizing: border-box; padding: 24px; border: 1px solid #e5e7eb; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.12); text-align: center; }
+  .modal h2 { margin: 0 0 16px; font-size: 22px; }
+  .btn { height: 46px; border-radius: 8px; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-sizing: border-box; }
+  .btn-primary { background: #2563eb; color: #ffffff; }
+  .btn-outline { border: 2px solid #2563eb; color: #2563eb; }
+  .shame { display: block; margin-top: 12px; font-size: 12px; color: #9ca3af; }
+  .choices { display: flex; gap: 12px; }
+  .choices .btn { flex: 1; }
+  .summary { width: 400px; margin-top: 22px; padding: 16px 20px; border: 1px solid #e5e7eb; border-radius: 12px; box-sizing: border-box; }
+  .price { display: flex; justify-content: space-between; font-size: 18px; }
+  .price strong { font-size: 20px; }
+  .check { display: flex; align-items: center; gap: 10px; margin-top: 12px; font-size: 16px; }
+  .box { width: 20px; height: 20px; border: 2px solid #6b7280; border-radius: 4px; box-sizing: border-box; flex: none; position: relative; }
+  .box.checked { background: #2563eb; border-color: #2563eb; }
+  .box.checked::after { content: ""; position: absolute; left: 5px; top: 1px; width: 5px; height: 10px; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; transform: rotate(45deg); }
+  .total-sneaky { margin-top: 10px; font-size: 12px; color: #9ca3af; text-align: right; }
+  .total-clear { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e5e7eb; display: flex; justify-content: space-between; font-weight: 700; font-size: 20px; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="modal">
+      <h2>Suscríbete y ahorra 10%</h2>
+      <div class="btn btn-primary">Sí, quiero ahorrar</div>
+      <span class="shame">No, prefiero pagar más</span>
+    </div>
+    <div class="summary">
+      <div class="price"><span>Zapatillas Runner</span><strong>$19.990</strong></div>
+      <div class="check"><span class="box checked"></span><span>Agregar seguro de envío por $2.990</span></div>
+      <div class="total-sneaky">Total $22.980</div>
+    </div>
+    <div class="caption">Avergonzar y colar costos</div>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="modal">
+      <h2>Suscríbete y ahorra 10%</h2>
+      <div class="choices">
+        <div class="btn btn-primary">Suscribirme</div>
+        <div class="btn btn-outline">Ahora no</div>
+      </div>
+    </div>
+    <div class="summary">
+      <div class="price"><span>Zapatillas Runner</span><strong>$19.990</strong></div>
+      <div class="check"><span class="box"></span><span>Agregar seguro de envío por $2.990</span></div>
+      <div class="total-clear"><span>Total</span><span>$19.990</span></div>
+    </div>
+    <div class="caption">Opciones equivalentes y costo transparente</div>
+  </div>
+</div>
+</body>
+</html>

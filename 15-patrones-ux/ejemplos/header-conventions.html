@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Header conventions</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; width: 1200px; height: 640px; overflow: hidden; }
+  .compare { display: flex; height: 640px; }
+  .half { flex: 1; padding: 28px 32px; display: flex; flex-direction: column; }
+  .half + .half { border-left: 1px solid #e5e7eb; }
+  .badge { align-self: flex-start; padding: 4px 16px; border-radius: 999px; font-weight: 600; }
+  .bad { background: #fee2e2; color: #b91c1c; }
+  .good { background: #dcfce7; color: #15803d; }
+  .page { margin-top: 24px; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; height: 400px; }
+  .header { display: flex; align-items: center; padding: 16px 20px; background: #f3f4f6; }
+  .logo { font-weight: 800; font-size: 22px; }
+  .odd .header { justify-content: center; }
+  .odd .text-link { padding: 10px 20px; color: #6b7280; text-decoration: underline; }
+  .grid { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 20px; }
+  .grid div { background: #f3f4f6; border-radius: 10px; }
+  .footer-bar { display: flex; gap: 24px; padding: 14px 20px; background: #f3f4f6; color: #6b7280; font-size: 17px; }
+  .footer-bar .cart { text-decoration: underline; }
+  .good-header { gap: 20px; }
+  .search { flex: 1; display: flex; align-items: center; gap: 10px; background: #ffffff; border: 1px solid #e5e7eb; border-radius: 999px; padding: 8px 16px; color: #6b7280; white-space: nowrap; }
+  .icons { display: flex; gap: 20px; }
+  .icon { position: relative; width: 28px; height: 28px; }
+  .icon svg { width: 28px; height: 28px; stroke: #111827; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .search svg { width: 20px; height: 20px; stroke: #6b7280; fill: none; stroke-width: 2; stroke-linecap: round; }
+  .count { position: absolute; top: -8px; right: -10px; background: #dc2626; color: #ffffff; font-size: 13px; font-weight: 700; border-radius: 999px; min-width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; }
+  .caption { margin-top: auto; color: #6b7280; font-size: 22px; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half">
+    <span class="badge bad">Mal</span>
+    <div class="page odd">
+      <div class="header"><span class="logo">TiendaNova</span></div>
+      <a class="text-link">Buscar</a>
+      <div class="grid"><div></div><div></div><div></div></div>
+      <div class="footer-bar"><span>Inicio</span><span>Ayuda</span><span class="cart">Carrito</span><span>Contacto</span></div>
+    </div>
+    <div class="caption">El usuario tiene que buscar el carrito</div>
+  </div>
+  <div class="half">
+    <span class="badge good">Bien</span>
+    <div class="page">
+      <div class="header good-header">
+        <span class="logo">TiendaNova</span>
+        <div class="search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+          Buscar productos
+        </div>
+        <div class="icons">
+          <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M3 4h2l2.5 11h11L21 7H6"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg>
+            <span class="count">2</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid"><div></div><div></div><div></div></div>
+    </div>
+    <div class="caption">Logo izquierda, búsqueda centro, carrito derecha</div>
+  </div>
+</div>
+</body>
+</html>

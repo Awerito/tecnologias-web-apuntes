@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Estados de carga</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; padding: 72px 56px 56px; box-sizing: border-box; display: flex; flex-direction: column; }
+  .half.bad { border-right: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 24px; padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 18px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .panel { flex: 1; border: 1px solid #e5e7eb; border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 28px; box-sizing: border-box; }
+  .spinner { width: 64px; height: 64px; border-radius: 50%; border: 7px solid #e5e7eb; border-top-color: #2563eb; }
+  .skeleton { flex-direction: column; justify-content: flex-start; gap: 22px; }
+  .card { display: flex; gap: 20px; width: 100%; }
+  .block { background: #e5e7eb; border-radius: 6px; position: relative; overflow: hidden; }
+  .block::after { content: ""; position: absolute; top: 0; bottom: 0; left: 35%; width: 25%; background: #f3f4f6; }
+  .thumb { width: 96px; height: 96px; border-radius: 10px; flex: none; }
+  .lines { flex: 1; display: flex; flex-direction: column; gap: 14px; padding-top: 6px; }
+  .title { height: 22px; width: 70%; }
+  .text { height: 16px; width: 95%; }
+  .text.short { width: 55%; }
+  .caption { margin-top: 24px; height: 60px; font-size: 22px; color: #6b7280; text-align: center; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="panel">
+      <div class="spinner"></div>
+    </div>
+    <p class="caption">La página parece vacía mientras carga</p>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="panel skeleton">
+      <div class="card">
+        <div class="block thumb"></div>
+        <div class="lines"><div class="block title"></div><div class="block text"></div><div class="block text short"></div></div>
+      </div>
+      <div class="card">
+        <div class="block thumb"></div>
+        <div class="lines"><div class="block title"></div><div class="block text"></div><div class="block text short"></div></div>
+      </div>
+      <div class="card">
+        <div class="block thumb"></div>
+        <div class="lines"><div class="block title"></div><div class="block text"></div><div class="block text short"></div></div>
+      </div>
+    </div>
+    <p class="caption">El esqueleto anticipa la estructura del contenido</p>
+  </div>
+</div>
+</body>
+</html>

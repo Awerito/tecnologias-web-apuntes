@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Estados de botón</title>
+    <style>
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        color: #111827;
+      }
+      .compare {
+        display: flex;
+        width: 1200px;
+        height: 640px;
+      }
+      .half {
+        flex: 1;
+        position: relative;
+        padding: 72px 16px 40px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+      }
+      .half.bad {
+        border-right: 1px solid #e5e7eb;
+      }
+      .badge {
+        position: absolute;
+        top: 20px;
+        left: 24px;
+        padding: 6px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .bad .badge {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .good .badge {
+        background: #dcfce7;
+        color: #15803d;
+      }
+      .states {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex: 1;
+        align-items: center;
+      }
+      .state {
+        flex: none;
+        width: 96px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      .state.wide {
+        width: 126px;
+      }
+      .state .label {
+        font-size: 15px;
+        color: #6b7280;
+        white-space: nowrap;
+      }
+      .btn {
+        width: 96px;
+        height: 44px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-size: 17px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        background: #2563eb;
+        color: #ffffff;
+        box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+      }
+      .btn.hover {
+        background: #1d4ed8;
+        box-shadow: 0 4px 10px rgba(29, 78, 216, 0.4);
+      }
+      .btn.active {
+        background: #1e40af;
+        box-shadow: none;
+        transform: translateY(1px);
+      }
+      .btn.loading {
+        opacity: 0.85;
+        width: 124px;
+      }
+      .btn.disabled {
+        background: #e5e7eb;
+        color: #9ca3af;
+        box-shadow: none;
+      }
+      .spinner {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.35);
+        border-top-color: #ffffff;
+        flex: none;
+      }
+      .caption {
+        margin: 0;
+        font-size: 22px;
+        color: #6b7280;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="compare">
+      <div class="half bad">
+        <span class="badge">Mal</span>
+        <div class="states">
+          <div class="state">
+            <div class="btn">Pagar</div>
+            <span class="label">Normal</span>
+          </div>
+          <div class="state">
+            <div class="btn">Pagar</div>
+            <span class="label">Hover</span>
+          </div>
+          <div class="state">
+            <div class="btn">Pagar</div>
+            <span class="label">Presionado</span>
+          </div>
+          <div class="state wide">
+            <div class="btn">Pagar</div>
+            <span class="label">Cargando</span>
+          </div>
+          <div class="state">
+            <div class="btn">Pagar</div>
+            <span class="label">Deshabilitado</span>
+          </div>
+        </div>
+        <p class="caption">
+          El botón no reacciona, el usuario hace clic dos veces
+        </p>
+      </div>
+      <div class="half good">
+        <span class="badge">Bien</span>
+        <div class="states">
+          <div class="state">
+            <div class="btn">Pagar</div>
+            <span class="label">Normal</span>
+          </div>
+          <div class="state">
+            <div class="btn hover">Pagar</div>
+            <span class="label">Hover</span>
+          </div>
+          <div class="state">
+            <div class="btn active">Pagar</div>
+            <span class="label">Presionado</span>
+          </div>
+          <div class="state wide">
+            <div class="btn loading">
+              <span class="spinner"></span>Procesando
+            </div>
+            <span class="label">Cargando</span>
+          </div>
+          <div class="state">
+            <div class="btn disabled">Pagar</div>
+            <span class="label">Deshabilitado</span>
+          </div>
+        </div>
+        <p class="caption">Cada estado se ve distinto</p>
+      </div>
+    </div>
+  </body>
+</html>

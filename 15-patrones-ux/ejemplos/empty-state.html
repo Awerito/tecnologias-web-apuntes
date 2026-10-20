@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Estados vacíos</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; padding: 72px 56px 56px; box-sizing: border-box; display: flex; flex-direction: column; }
+  .half.bad { border-right: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 24px; padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 18px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  h2 { margin: 0; padding-bottom: 14px; border-bottom: 1px solid #e5e7eb; font-size: 26px; }
+  .area { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .count { font-size: 15px; color: #6b7280; align-self: flex-start; margin-top: 16px; }
+  .area svg { width: 72px; height: 72px; stroke: #6b7280; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .area strong { display: block; margin-top: 18px; font-size: 24px; }
+  .area p { margin: 10px 0 22px; color: #6b7280; font-size: 19px; }
+  .btn { background: #2563eb; color: #ffffff; font-size: 20px; font-weight: 600; padding: 12px 24px; border-radius: 8px; }
+  .caption { margin-top: 24px; font-size: 22px; color: #6b7280; text-align: center; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <h2>Mis pedidos</h2>
+    <div class="area">
+      <span class="count">0 resultados</span>
+      <div style="flex: 1"></div>
+    </div>
+    <p class="caption">Un vacío sin explicación ni salida</p>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <h2>Mis pedidos</h2>
+    <div class="area">
+      <svg viewBox="0 0 24 24">
+        <path d="M3 9l2-5h14l2 5"/>
+        <path d="M3 9h18v11H3z"/>
+        <path d="M3 9l4 3h10l4-3"/>
+        <path d="M12 4v8"/>
+      </svg>
+      <strong>Aún no tienes pedidos</strong>
+      <p>Cuando compres algo, aparecerá aquí</p>
+      <span class="btn">Ver productos</span>
+    </div>
+    <p class="caption">Explica el vacío y ofrece el siguiente paso</p>
+  </div>
+</div>
+</body>
+</html>

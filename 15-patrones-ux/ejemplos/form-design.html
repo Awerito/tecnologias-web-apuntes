@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Diseño de formularios</title>
+<style>
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; }
+  .compare { display: flex; width: 1200px; height: 640px; }
+  .half { flex: 1; position: relative; padding: 64px 56px 36px; box-sizing: border-box; display: flex; flex-direction: column; }
+  .half.bad { border-right: 1px solid #e5e7eb; }
+  .badge { position: absolute; top: 20px; left: 24px; padding: 6px 16px; border-radius: 999px; font-weight: 700; font-size: 18px; }
+  .bad .badge { background: #fee2e2; color: #b91c1c; }
+  .good .badge { background: #dcfce7; color: #15803d; }
+  .form { flex: 1; }
+  .banner { background: #fee2e2; color: #b91c1c; padding: 10px 16px; border-radius: 8px; font-weight: 600; margin-bottom: 20px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .field { display: block; height: 44px; border: 1px solid #e5e7eb; border-radius: 8px; padding: 0 14px; box-sizing: border-box; line-height: 42px; font-size: 18px; background: #ffffff; }
+  .placeholder { color: #6b7280; }
+  .field.error { border: 2px solid #b91c1c; line-height: 40px; }
+  .btn { display: inline-block; margin-top: 14px; padding: 12px 28px; border-radius: 8px; font-size: 20px; font-weight: 600; }
+  .btn-gray { background: #e5e7eb; color: #6b7280; }
+  .btn-primary { background: #2563eb; color: #ffffff; }
+  .good .form { max-width: 440px; }
+  .good label { display: block; margin-bottom: 6px; font-weight: 600; }
+  .good .row { margin-bottom: 10px; }
+  .msg { display: block; margin-top: 4px; font-size: 16px; }
+  .msg.err { color: #b91c1c; }
+  .msg.help { color: #6b7280; }
+  .caption { margin-top: 12px; font-size: 22px; color: #6b7280; text-align: center; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half bad">
+    <span class="badge">Mal</span>
+    <div class="form">
+      <div class="banner">Error en el formulario</div>
+      <div class="grid">
+        <span class="field placeholder">Nombre</span>
+        <span class="field">ana@</span>
+        <span class="field placeholder">Teléfono</span>
+        <span class="field placeholder">Contraseña</span>
+      </div>
+      <span class="btn btn-gray">Enviar</span>
+    </div>
+    <p class="caption">Placeholder como etiqueta y error genérico arriba</p>
+  </div>
+  <div class="half good">
+    <span class="badge">Bien</span>
+    <div class="form">
+      <div class="row"><label>Nombre</label><span class="field"></span></div>
+      <div class="row"><label>Correo electrónico</label><span class="field error">ana@</span><span class="msg err">Falta el dominio, por ejemplo ana@gmail.com</span></div>
+      <div class="row"><label>Teléfono</label><span class="field"></span><span class="msg help">Solo números, sin espacios</span></div>
+      <div class="row"><label>Contraseña</label><span class="field"></span></div>
+      <span class="btn btn-primary">Crear cuenta</span>
+    </div>
+    <p class="caption">Etiqueta visible, una columna, error junto al campo</p>
+  </div>
+</div>
+</body>
+</html>

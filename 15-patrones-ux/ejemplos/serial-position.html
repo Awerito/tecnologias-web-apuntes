@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Efecto de posición serial</title>
+    <style>
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        color: #111827;
+      }
+      .compare {
+        display: flex;
+        width: 1200px;
+        height: 640px;
+      }
+      .half {
+        flex: 1;
+        position: relative;
+        padding: 90px 40px 36px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+      }
+      .half.bad {
+        border-right: 1px solid #e5e7eb;
+      }
+      .badge {
+        position: absolute;
+        top: 20px;
+        left: 24px;
+        padding: 6px 16px;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .bad .badge {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .good .badge {
+        background: #dcfce7;
+        color: #15803d;
+      }
+      .site {
+        flex: 1;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        height: 64px;
+        background: #f3f4f6;
+        border-radius: 8px;
+        padding: 0 20px;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 22px;
+        width: 96px;
+      }
+      .nav {
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(6, auto);
+        justify-content: space-between;
+        column-gap: 14px;
+        text-align: center;
+        font-size: 15px;
+        white-space: nowrap;
+      }
+      .nav b {
+        font-weight: 700;
+      }
+      .nav svg {
+        vertical-align: -3px;
+        margin-right: 4px;
+      }
+      .chart {
+        margin: 24px 20px 0 116px;
+      }
+      .chart-label {
+        display: block;
+        font-size: 15px;
+        color: #6b7280;
+        margin-bottom: 6px;
+      }
+      .bars {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        justify-items: center;
+        align-items: end;
+        height: 120px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .bars i {
+        display: block;
+        width: 14px;
+        background: #e5e7eb;
+        border-radius: 3px 3px 0 0;
+      }
+      .caption {
+        margin-top: 12px;
+        font-size: 22px;
+        color: #6b7280;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="compare">
+      <div class="half bad">
+        <span class="badge">Mal</span>
+        <div class="site">
+          <div class="header">
+            <span class="logo">Tienda</span>
+            <nav class="nav">
+              <span>Blog</span><span>Prensa</span><span>Inicio</span
+              ><span>Carrito</span><span>Ayuda</span><span>Novedades</span>
+            </nav>
+          </div>
+          <div class="chart">
+            <span class="chart-label">Recuerdo</span>
+            <div class="bars">
+              <i style="height: 110px"></i><i style="height: 55px"></i
+              ><i style="height: 28px"></i><i style="height: 24px"></i
+              ><i style="height: 50px"></i><i style="height: 100px"></i>
+            </div>
+          </div>
+        </div>
+        <p class="caption">
+          Lo más usado quedó en las posiciones que se olvidan
+        </p>
+      </div>
+      <div class="half good">
+        <span class="badge">Bien</span>
+        <div class="site">
+          <div class="header">
+            <span class="logo">Tienda</span>
+            <nav class="nav">
+              <b>Inicio</b><span>Productos</span><span>Ofertas</span
+              ><span>Blog</span><span>Ayuda</span
+              ><b
+                ><svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#111827"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="9" cy="21" r="1.5" />
+                  <circle cx="19" cy="21" r="1.5" />
+                  <path
+                    d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 7H6"
+                  /></svg
+                >Carrito</b
+              >
+            </nav>
+          </div>
+          <div class="chart">
+            <span class="chart-label">Recuerdo</span>
+            <div class="bars">
+              <i style="height: 110px"></i><i style="height: 55px"></i
+              ><i style="height: 28px"></i><i style="height: 24px"></i
+              ><i style="height: 50px"></i><i style="height: 100px"></i>
+            </div>
+          </div>
+        </div>
+        <p class="caption">
+          Lo más usado en los extremos, que son los que se recuerdan
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

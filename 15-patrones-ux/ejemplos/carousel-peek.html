@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Carousel peek</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ffffff; font-family: system-ui, sans-serif; font-size: 18px; color: #111827; width: 1200px; height: 640px; overflow: hidden; }
+  .compare { display: flex; height: 640px; }
+  .half { flex: 1; min-width: 0; padding: 28px 32px; display: flex; flex-direction: column; }
+  .half + .half { border-left: 1px solid #e5e7eb; }
+  .badge { align-self: flex-start; padding: 4px 16px; border-radius: 999px; font-weight: 600; }
+  .bad { background: #fee2e2; color: #b91c1c; }
+  .good { background: #dcfce7; color: #15803d; }
+  .section-title { font-size: 26px; font-weight: 700; margin: 56px 0 24px; }
+  .track { display: flex; gap: 16px; overflow: hidden; }
+  .card { flex: none; width: 168px; }
+  .peek .card { width: 144px; }
+  .card .image { height: 130px; background: #e5e7eb; border-radius: 10px; }
+  .card .name { margin-top: 12px; font-size: 18px; }
+  .card .price { margin-top: 4px; font-weight: 700; font-size: 20px; }
+  .dots { display: flex; gap: 8px; justify-content: center; margin-top: 24px; }
+  .dots span { width: 10px; height: 10px; border-radius: 50%; background: #e5e7eb; }
+  .dots .active { background: #2563eb; }
+  .caption { margin-top: auto; color: #6b7280; font-size: 22px; }
+</style>
+</head>
+<body>
+<div class="compare">
+  <div class="half">
+    <span class="badge bad">Mal</span>
+    <div class="section-title">Destacados</div>
+    <div class="track">
+      <div class="card"><div class="image"></div><div class="name">Audífonos</div><div class="price">$12.990</div></div>
+      <div class="card"><div class="image"></div><div class="name">Teclado</div><div class="price">$24.990</div></div>
+      <div class="card"><div class="image"></div><div class="name">Mouse</div><div class="price">$9.990</div></div>
+    </div>
+    <div class="caption">Nada indica que hay más</div>
+  </div>
+  <div class="half">
+    <span class="badge good">Bien</span>
+    <div class="section-title">Destacados</div>
+    <div class="track peek">
+      <div class="card"><div class="image"></div><div class="name">Audífonos</div><div class="price">$12.990</div></div>
+      <div class="card"><div class="image"></div><div class="name">Teclado</div><div class="price">$24.990</div></div>
+      <div class="card"><div class="image"></div><div class="name">Mouse</div><div class="price">$9.990</div></div>
+      <div class="card"><div class="image"></div><div class="name">Parlante</div><div class="price">$19.990</div></div>
+    </div>
+    <div class="dots"><span class="active"></span><span></span><span></span><span></span></div>
+    <div class="caption">La tarjeta cortada invita a deslizar</div>
+  </div>
+</div>
+</body>
+</html>
