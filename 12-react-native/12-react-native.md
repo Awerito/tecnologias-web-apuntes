@@ -1,7 +1,7 @@
 ---
 title: "React Native: Introducción y Setup"
 author: "Diego Muñoz"
-date: "10 de septiembre de 2026"
+date: "05 de noviembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -25,14 +25,17 @@ aprendizaje rápida para quienes ya dominan React.
 
 ## Contexto y propósito
 
-* Antes, Android y iOS requerían proyectos separados: **Java/Kotlin** y
-**Swift/Objective-C**.
-* React Native unifica ambos mundos bajo una misma lógica React.
+* Cada plataforma tiene su lenguaje nativo: **Kotlin** en Android y **Swift**
+en iOS.
+* Kotlin Multiplatform y el SDK de Swift para Android ya compilan para ambas.
+* React Native hace lo mismo reutilizando React y el ecosistema de npm.
 * Usa **componentes nativos reales**, no un navegador embebido.
 
-![Comunicación JavaScript - Nativo](imgs/oldbridge.png){ width=45% }
+\centering
 
-> El bridge traduce componentes JavaScript en vistas nativas del sistema.
+![](imgs/newarch.png){ width=75% }
+
+> JSI conecta JavaScript con el código nativo sin serializar mensajes.
 
 ---
 
@@ -54,9 +57,10 @@ nativo.
 
 ## Requisitos técnicos
 
-* **Node.js ≥ 24.x**
-* **npm** (viene incluido con Node.js)
+* **Node.js** LTS
+* **pnpm**
 * Teléfono Android o iPhone con la app **Expo Go** instalada
+* En iPhone, una cuenta gratuita de Expo iniciada en la app y en el terminal
 * Conexión estable en la misma red Wi-Fi que el computador
 
 > Descarga Expo Go:  
@@ -72,8 +76,9 @@ nativo.
 * **Expo** simplifica la creación y ejecución de apps sin instalar SDKs
 nativos.
 * Permite crear, ejecutar y depurar en tiempo real.
-* El comando `npm start` abre un servidor con un **código QR** para probar la
-app en el teléfono.
+* **Expo Go** es la app de aprendizaje. Corre solo proyectos del SDK actual.
+* El comando `pnpm start` levanta un servidor y muestra un **código QR** en el
+terminal.
 * Basado en la documentación oficial:
 [docs.expo.dev/get-started/set-up-your-environment](https://docs.expo.dev/get-started/set-up-your-environment/)
 
@@ -84,13 +89,17 @@ app en el teléfono.
 ## Comandos iniciales
 
 ```bash
-npm create expo <nombre-del-proyecto>
+pnpm create expo-app <nombre-del-proyecto>
 cd <nombre-del-proyecto>
-npm start
+pnpm start
 ```
 
-* Abre el panel de desarrollo de Expo en el navegador.
-* Escanea el **QR** con la app **Expo Go**.
+* La plantilla por defecto trae Expo Router, TypeScript y pantallas de ejemplo
+con rutas en `src/app`.
+* `--template blank` genera solo `App.js`, para desarrollar un proyecto desde
+cero.
+* Escanea el **QR** del terminal con la app **Expo Go**.
+* En iPhone, antes de `pnpm start`, inicia sesión con `pnpm expo login`.
 
 ---
 
@@ -98,10 +107,12 @@ npm start
 
 ## Archivos generados
 
-* `App.js` — punto de entrada de la aplicación.
-* `/assets` — imágenes, fuentes e íconos.
+* `src/app/index.tsx` — pantalla inicial. Cada archivo en `src/app` es una ruta.
+* `src/app/_layout.tsx` — pestañas y tema que envuelven las pantallas.
+* `src/components` — componentes de ejemplo.
+* `app.json` — nombre, ícono y configuración de la app.
+* `/assets` — ícono y pantalla de carga.
 * `package.json` — scripts y dependencias.
-* `.expo` — metadatos locales.
 
 > Esta estructura se crea automáticamente al iniciar el proyecto.
 
@@ -109,7 +120,7 @@ npm start
 
 # Primer renderizado en React Native
 
-## Estructura básica del componente
+## Contenido nuevo de `src/app/index.tsx`
 
 ```js
 import { Text, View, StyleSheet } from "react-native";
@@ -145,9 +156,77 @@ const styles = StyleSheet.create({
 });
 ```
 
-* Estilos escritos como **objetos JS**, no como CSS.
-* No se usan unidades (`px`, `%`), solo números o strings válidos.
-* `StyleSheet` mejora rendimiento y validación.
+* Objetos JS, no CSS. `StyleSheet.create` valida y autocompleta.
+* Los números son píxeles sin unidad, los porcentajes van como string `"50%"`.
+
+---
+
+# Imágenes
+
+## Locales con `require` y remotas con URL
+
+```js
+<Image
+  source={require("../../assets/images/icon.png")}
+  style={styles.logo}
+/>
+<Image
+  source={{ uri: "https://reactnative.dev/img/tiny_logo.png" }}
+  style={styles.logo}
+/>
+```
+
+* Importa `Image` desde `react-native` y agrega `logo: { width: 96, height: 96 }`.
+* Las imágenes remotas necesitan ancho y alto explícitos.
+
+---
+
+# Navegación con Expo Router
+
+## Enlace a otra pantalla
+
+```js
+import { Link } from "expo-router";
+
+<Link href="/explore">Ir a Explore</Link>
+```
+
+* `href` apunta al archivo `src/app/explore.tsx`, que la plantilla ya trae.
+* Cada archivo nuevo en `src/app` es una ruta, sin registrar nada.
+
+---
+
+# Sensores con expo-sensors
+
+## Instalación
+
+```bash
+pnpm expo install expo-sensors
+```
+
+* `expo install` elige la versión compatible con el SDK del proyecto.
+* Viene incluido en Expo Go, no requiere compilar nada nativo.
+
+---
+
+# Acelerómetro
+
+## Lectura en tiempo real
+
+```js
+import { Accelerometer } from "expo-sensors";
+import { useEffect, useState } from "react";
+
+const [data, setData] = useState({ x: 0, y: 0, z: 0 });
+
+useEffect(() => {
+  const subscription = Accelerometer.addListener(setData);
+  return () => subscription.remove();
+}, []);
+<Text>x: {data.x.toFixed(2)}</Text>
+```
+
+* El hook va dentro del componente y el `Text` dentro del `View`.
 
 ---
 
@@ -159,7 +238,7 @@ const styles = StyleSheet.create({
 2. Estilos declarativos en JS.
 3. Layout con **Flexbox**.
 4. Carga de imágenes con `require()` o URL.
-5. Librerías dedicadas para navegación y sensores.
+5. Bibliotecas dedicadas para navegación y sensores.
 
 > React Native mantiene la filosofía de React, pero en el entorno móvil.
 
@@ -169,7 +248,7 @@ const styles = StyleSheet.create({
 
 1. React Native combina React y desarrollo móvil nativo.
 2. Expo ofrece un entorno rápido y multiplataforma para iniciar.
-3. Con npm el flujo es estable y simple.
+3. Con pnpm el flujo es estable y simple.
 4. Próxima clase: **estilos, Flexbox y NativeWind**.
 
 ---

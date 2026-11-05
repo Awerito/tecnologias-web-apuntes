@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>New Architecture</title>
+    <style>
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        color: #111827;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1200px;
+        height: 230px;
+        gap: 28px;
+      }
+      .box {
+        width: 300px;
+        height: 190px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 16px;
+      }
+      .box h2 {
+        margin: 0 0 10px;
+        font-size: 28px;
+      }
+      .box p {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.35;
+        color: #374151;
+      }
+      .js {
+        background: #fef3c7;
+        border: 2px solid #f59e0b;
+      }
+      .jsi {
+        background: #e0e7ff;
+        border: 2px solid #4f46e5;
+      }
+      .native {
+        background: #dcfce7;
+        border: 2px solid #15803d;
+      }
+      .link {
+        width: 60px;
+        height: 6px;
+        background: #9ca3af;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="box js">
+        <h2>JavaScript</h2>
+        <p>Componentes React<br />motor Hermes</p>
+      </div>
+      <div class="link"></div>
+      <div class="box jsi">
+        <h2>JSI</h2>
+        <p>Interfaz en C++<br />llamadas directas, sin serializar</p>
+      </div>
+      <div class="link"></div>
+      <div class="box native">
+        <h2>Nativo</h2>
+        <p>Fabric dibuja las vistas<br />TurboModules exponen APIs</p>
+      </div>
+    </div>
+  </body>
+</html>
