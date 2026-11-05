@@ -1,7 +1,7 @@
 ---
-title: "Clase Básica de JavaScript (ES6) — Bases para React"
+title: "Clase Básica de JavaScript (ES6): Bases para React"
 author: "Diego Muñoz"
-date: "10 de septiembre de 2026"
+date: "05 de noviembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true

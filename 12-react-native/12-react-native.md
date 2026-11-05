@@ -107,12 +107,12 @@ cero.
 
 ## Archivos generados
 
-* `src/app/index.tsx` — pantalla inicial. Cada archivo en `src/app` es una ruta.
-* `src/app/_layout.tsx` — pestañas y tema que envuelven las pantallas.
-* `src/components` — componentes de ejemplo.
-* `app.json` — nombre, ícono y configuración de la app.
-* `/assets` — ícono y pantalla de carga.
-* `package.json` — scripts y dependencias.
+* `src/app/index.tsx`: pantalla inicial. Cada archivo en `src/app` es una ruta.
+* `src/app/_layout.tsx`: pestañas y tema que envuelven las pantallas.
+* `src/components`: componentes de ejemplo.
+* `app.json`: nombre, ícono y configuración de la app.
+* `/assets`: ícono y pantalla de carga.
+* `package.json`: scripts y dependencias.
 
 > Esta estructura se crea automáticamente al iniciar el proyecto.
 

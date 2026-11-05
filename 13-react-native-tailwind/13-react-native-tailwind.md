@@ -1,7 +1,7 @@
 ---
 title: "React Native + Tailwind (NativeWind)"
 author: "Diego Muñoz"
-date: "10 de septiembre de 2026"
+date: "05 de noviembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -39,11 +39,11 @@ npx rn-new --nativewind --npm
 
 Archivos importantes que ya vienen listos:
 
-* `App.tsx` — punto de entrada.
-* `tailwind.config.js` — config de Tailwind + NativeWind.
-* `babel.config.js` — plugin de NativeWind.
-* `metro.config.js` — integra `global.css`.
-* `global.css` — importa `@tailwind base`, `components`, `utilities`.
+* `App.tsx`: punto de entrada.
+* `tailwind.config.js`: config de Tailwind + NativeWind.
+* `babel.config.js`: plugin de NativeWind.
+* `metro.config.js`: integra `global.css`.
+* `global.css`: importa `@tailwind base`, `components`, `utilities`.
 
 > No hay que tocar la configuración para esta clase, solo el código de la app.
 

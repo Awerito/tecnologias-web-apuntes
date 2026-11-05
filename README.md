@@ -1,4 +1,4 @@
-# Tecnologías Web – Apuntes
+# Tecnologías Web: Apuntes
 
 Repositorio con los apuntes y materiales de las clases del curso. Cada carpeta
 contiene el archivo principal de la sesión en formato Markdown y su versión en
