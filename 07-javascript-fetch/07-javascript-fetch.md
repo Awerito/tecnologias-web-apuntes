@@ -1,7 +1,7 @@
 ---
 title: "APIs REST y fetch"
 author: "Diego Muñoz"
-date: "21 de septiembre de 2026"
+date: "05 de noviembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -9,14 +9,14 @@ colorlinks: true
 
 # Introducción
 
-* Qué es una API y para qué se usa.
+* Qué es un API y para qué se usa.
 * REST, métodos HTTP y códigos de respuesta.
-* Consumir una API desde React con `fetch`.
+* Consumir un API desde React con `fetch`.
 * Autenticación con OAuth2 y tokens.
 
 ---
 
-# ¿Qué es una API?
+# ¿Qué es un API?
 
 * **Application Programming Interface**.
 * Conjunto de definiciones y protocolos para que dos programas se comuniquen.
@@ -86,7 +86,7 @@ hay que revisarlo a mano.
 
 # El 200 que esconde un error
 
-Mala práctica frecuente: la API responde `200` y avisa del error dentro del JSON.
+Mala práctica frecuente: el API responde `200` y avisa del error dentro del JSON.
 
 ```
 HTTP/1.1 200 OK
@@ -251,7 +251,7 @@ const createPost = () =>
 
 # Autenticación
 
-* La mayoría de las APIs no le responden a cualquiera.
+* La mayoría de los APIs no le responden a cualquiera.
 * Hay varias formas de identificarse: API key, sesión con cookie, OAuth2.
 * Usamos OAuth2, el esquema más común en aplicaciones web y móviles.
 
@@ -290,7 +290,7 @@ const login = () =>
 
 # Usar el token
 
-Va en el header `Authorization` con el prefijo `Bearer`. Sin él la API
+Va en el header `Authorization` con el prefijo `Bearer`. Sin él el API
 responde `401`.
 
 ```js
@@ -316,7 +316,7 @@ const loadProfile = () =>
 
 # Resumen
 
-* Una API REST expone recursos por URL sobre HTTP.
+* Un API REST expone recursos por URL sobre HTTP.
 * El método dice qué hacer: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`.
 * `fetch` hace la petición y el evento del botón decide cuándo.
 * `isLoading` y `error` son parte del estado, no un detalle.

@@ -1,24 +1,24 @@
 ---
 title: "Consumo de APIs REST"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "05 de noviembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
 ---
 
-# Introducción a las APIs
+# Introducción a los APIs
 
-## ¿Qué es una API?
+## ¿Qué es un API?
 
 - **Application Programming Interface (API)**: Es un conjunto de definiciones y
 protocolos para desarrollar e integrar software.
 
 --- 
 
-# ¿Qué hace una API?
+# ¿Qué hace un API?
 
-- Las APIs permiten que diferentes aplicaciones o sistemas interactúen entre
+- Los APIs permiten que diferentes aplicaciones o sistemas interactúen entre
 sí.
 - Se usan para acceder a funcionalidades o datos de un servicio desde un
 programa.
@@ -27,7 +27,7 @@ programa.
 
 ---
 
-# ¿Para qué se usan las APIs?
+# ¿Para qué se usan los APIs?
 
 - **Interacción entre aplicaciones**: Permiten que aplicaciones hablen entre
 sí, como enviar mensajes desde una app a otra.
@@ -83,9 +83,9 @@ representaciones (JSON, XML, etc.).
 
 # Resumen
 
-- Las APIs son herramientas esenciales para la interacción entre aplicaciones.
+- Los APIs son herramientas esenciales para la interacción entre aplicaciones.
 - **REST** es un paradigma simple, eficiente y ampliamente adoptado.
 - Existen otras opciones como **GraphQL**, **gRPC** y **SOAP**, cada una con
 sus ventajas y desventajas.
-- Consumir una API REST implica realizar solicitudes HTTP y procesar
+- Consumir un API REST implica realizar solicitudes HTTP y procesar
 respuestas, generalmente en formato JSON.

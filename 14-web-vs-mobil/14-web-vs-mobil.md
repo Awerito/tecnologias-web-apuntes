@@ -1,7 +1,7 @@
 ---
 title: "Paradigmas de Diseño: Móvil vs Web"
 author: "Diego Muñoz"
-date: "19 de junio de 2026"
+date: "05 de noviembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -360,7 +360,7 @@ colorlinks: true
 - Código compartido 80-95% entre iOS y Android.
 - JavaScript conocido, curva de aprendizaje menor.
 - Hot reload acelera desarrollo significativamente.
-- Comunidad grande, muchas librerías disponibles.
+- Comunidad grande, muchas bibliotecas disponibles.
 
 ---
 
@@ -376,7 +376,7 @@ colorlinks: true
 # Herramientas del ecosistema
 
 - **Expo**: Desarrollo rápido, menos configuración nativa.
-- **React Navigation**: Librería de navegación estándar.
+- **React Navigation**: Biblioteca de navegación estándar.
 - **Redux/Zustand**: Gestión de estado global.
 - **React Query**: Cache y sincronización de datos.
 - **NativeWind**: Tailwind CSS para React Native.

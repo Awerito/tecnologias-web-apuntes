@@ -1,7 +1,7 @@
 ---
 title: "Resumen de Temas en Desarrollo Web y Móvil"
 author: "Diego Muñoz"
-date: "09 de noviembre de 2025"
+date: "05 de noviembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -18,7 +18,7 @@ En este curso vimos varios conceptos clave en desarrollo web y móvil, desde
 
 ### React
 
-- **React**: Es una librería para hacer interfaces de usuario usando
+- **React**: Es una biblioteca para hacer interfaces de usuario usando
 componentes.
 - **JSX**: Es una forma de escribir HTML dentro de JavaScript.
 - **Virtual DOM**: React usa un sistema eficiente para actualizar solo lo que
@@ -138,7 +138,7 @@ const Counter = () => {
 
 ### React Router
 
-- **React Router**: Es la librería para manejar rutas en aplicaciones de una
+- **React Router**: Es la biblioteca para manejar rutas en aplicaciones de una
 sola página (SPA).
 - **Rutas dinámicas**: Creamos rutas con parámetros para hacerlas más
 flexibles.
@@ -156,7 +156,7 @@ móviles con Expo.
 
 - **`fetch`**: Es la forma más común de hacer solicitudes HTTP en JavaScript.
 - **Manejo de respuestas**: Usamos promesas (`.then()`) para trabajar con los
-datos de las APIs.
+datos de los APIs.
 
 ### Autenticación con OAuth2 y JWT
 
@@ -195,7 +195,7 @@ una app en las tiendas de aplicaciones.
 
 # Resumen
 
-- **React**: Librería para interfaces de usuario.
+- **React**: Biblioteca para interfaces de usuario.
 - **Hooks**: Nueva forma de manejar estado y efectos secundarios.
 - **Context**: Para compartir datos entre componentes.
 - **React Router**: Para manejar rutas en React.
