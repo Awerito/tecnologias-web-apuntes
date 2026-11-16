@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fragmentation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        color: #111827;
+        width: 1200px;
+        height: 640px;
+        overflow: hidden;
+      }
+      .compare {
+        display: flex;
+        height: 640px;
+      }
+      .half {
+        flex: 1;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .half + .half {
+        border-left: 1px solid #e5e7eb;
+      }
+      .badge {
+        align-self: flex-start;
+        padding: 4px 16px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .bad {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .good {
+        background: #dcfce7;
+        color: #15803d;
+      }
+      .neutral {
+        background: #e5e7eb;
+        color: #374151;
+      }
+      .phone {
+        position: relative;
+        width: 280px;
+        height: 500px;
+        margin-top: 12px;
+        border: 8px solid #111827;
+        border-radius: 36px;
+        overflow: hidden;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        font-weight: 700;
+      }
+      .content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .item {
+        padding: 14px;
+        border-radius: 12px;
+        background: #f3f4f6;
+      }
+      .line {
+        height: 14px;
+        background: #f3f4f6;
+        border-radius: 6px;
+      }
+      .line.short {
+        width: 60%;
+      }
+      .hero {
+        height: 110px;
+        background: #e5e7eb;
+        border-radius: 12px;
+      }
+      .tabs {
+        display: flex;
+        margin-top: auto;
+        border-top: 1px solid #e5e7eb;
+        background: #f3f4f6;
+      }
+      .tabs span {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        padding: 14px 0;
+        color: #6b7280;
+      }
+      .tabs .active {
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .caption {
+        margin-top: auto;
+        color: #6b7280;
+        font-size: 22px;
+        align-self: flex-start;
+      }
+      .scene {
+        height: 640px;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+      }
+      .row {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .label {
+        font-weight: 600;
+      }
+      .arrow {
+        color: #6b7280;
+        font-size: 16px;
+        text-align: center;
+      }
+      .arrow b {
+        display: block;
+        font-size: 40px;
+        color: #111827;
+      }
+      .row {
+        align-items: flex-end;
+      }
+      .dev {
+        border: 7px solid #111827;
+        border-radius: 26px;
+        background: #ffffff;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        overflow: hidden;
+      }
+      .dev .hero {
+        height: 30%;
+      }
+      .dev.tablet {
+        border-radius: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scene">
+      <div class="row">
+        <div class="col"><div class="dev" style="width: 150px; height: 260px"><div class="hero"></div><div class="line"></div><div class="line short"></div></div><span class="label">4,7"</span></div>
+        <div class="col"><div class="dev" style="width: 180px; height: 360px"><div class="hero"></div><div class="line"></div><div class="line short"></div></div><span class="label">6,1"</span></div>
+        <div class="col"><div class="dev" style="width: 200px; height: 420px"><div class="hero"></div><div class="line"></div><div class="line short"></div></div><span class="label">6,7"</span></div>
+        <div class="col"><div class="dev tablet" style="width: 340px; height: 440px"><div class="hero"></div><div class="line"></div><div class="line short"></div></div><span class="label">Tablet 11"</span></div>
+      </div>
+      <div class="caption">La misma pantalla debe funcionar en todos los tamaños</div>
+    </div>
+  </body>
+</html>

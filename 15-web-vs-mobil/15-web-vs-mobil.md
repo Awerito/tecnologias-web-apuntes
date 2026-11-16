@@ -1,7 +1,7 @@
 ---
 title: "Paradigmas de Diseño: Móvil vs Web"
 author: "Diego Muñoz"
-date: "05 de noviembre de 2026"
+date: "16 de noviembre de 2026"
 theme: "metropolis"
 aspectratio: 169
 colorlinks: true
@@ -26,10 +26,12 @@ colorlinks: true
 # Interacción táctil
 
 - Área táctil mínima: 44x44 píxeles en iOS, 48x48dp en Android.
-- No existe hover en móvil: feedback inmediato al tocar.
+- No existe hover en móvil: respuesta inmediata al tocar.
 - Gestos naturales: swipe, pinch, long-press son esperados.
 
-![Áreas táctiles](imgs/touch-targets.png){ width=38% }
+\centering
+
+![](imgs/touch-targets.png){ width=64% }
 
 ---
 
@@ -39,7 +41,9 @@ colorlinks: true
 - Botón back automático en header.
 - Usuario mantiene contexto de dónde viene.
 
-![Stack Navigation](imgs/stack-navigation.png){ width=45% }
+\centering
+
+![](imgs/stack-navigation.png){ width=64% }
 
 ---
 
@@ -49,7 +53,9 @@ colorlinks: true
 - Siempre visible en parte inferior.
 - Similar a pestañas web pero comportamiento diferente.
 
-![Tab Navigation](imgs/tab-navigation.png){ width=45% }
+\centering
+
+![](imgs/tab-navigation.png){ width=64% }
 
 ---
 
@@ -59,7 +65,9 @@ colorlinks: true
 - Para opciones secundarias o configuración.
 - Común en apps con muchas secciones.
 
-![Drawer Navigation](imgs/drawer-navigation.png){ width=40% }
+\centering
+
+![](imgs/drawer-navigation.png){ width=64% }
 
 ---
 
@@ -98,7 +106,9 @@ colorlinks: true
 - Versiones de OS: Android 8-14, iOS 13-17.
 - Capacidades variables entre dispositivos.
 
-![Fragmentación Android](imgs/android-fragmentation.png){ width=37% }
+\centering
+
+![](imgs/android-fragmentation.png){ width=64% }
 
 ---
 
@@ -111,14 +121,16 @@ colorlinks: true
 
 ---
 
-# Feedback al usuario
+# Respuesta al usuario
 
 - **Loading states**: Spinner, skeleton screens, progress bars.
 - **Toast/Snackbar**: Mensaje breve en parte inferior.
 - **Alert/Dialog**: Para confirmaciones importantes.
-- **Haptic feedback**: Vibración sutil en acciones críticas.
+- **Vibración**: respuesta sutil en acciones críticas.
 
-![Estados de feedback](imgs/user-feedback.png){ width=50% }
+\centering
+
+![](imgs/user-feedback.png){ width=64% }
 
 ---
 
@@ -126,10 +138,12 @@ colorlinks: true
 
 - Detectar pérdida de conexión automáticamente.
 - Mostrar UI apropiada cuando no hay internet.
-- Queue de operaciones para sincronizar después.
+- Cola de operaciones para sincronizar después.
 - Modo offline completo para funcionalidad básica.
 
-![Offline UI](imgs/offline-state.png){ width=38% }
+\centering
+
+![](imgs/offline-state.png){ width=64% }
 
 ---
 
@@ -140,7 +154,9 @@ colorlinks: true
 - Diferencia crítica en performance móvil.
 - Lazy loading de imágenes esencial.
 
-![Virtualización](imgs/list-performance.png){ width=30% }
+\centering
+
+![](imgs/list-performance.png){ width=64% }
 
 ---
 
@@ -160,7 +176,9 @@ colorlinks: true
 - **Permisos**: Flujo diferente en cada plataforma.
 - **Tipografía**: San Francisco (iOS), Roboto (Android).
 
-![iOS vs Android UI](imgs/ios-android-diff.png){ width=55% }
+\centering
+
+![](imgs/ios-android-diff.png){ width=64% }
 
 ---
 
@@ -171,7 +189,9 @@ colorlinks: true
 - Manejar rechazo con gracia, ofrecer funcionalidad alternativa.
 - iOS más estricto que Android en privacidad.
 
-![Flujo de permisos](imgs/permissions-flow.png){ width=45% }
+\centering
+
+![](imgs/permissions-flow.png){ width=64% }
 
 ---
 
@@ -180,7 +200,7 @@ colorlinks: true
 - Emulador/Simulador: Rápido pero impreciso.
 - Dispositivo real necesario para: GPS, cámara, sensores, performance.
 - Probar en múltiples tamaños y versiones.
-- Usuarios tienen dispositivos viejos, no flagship.
+- Usuarios tienen dispositivos viejos, no de gama alta.
 
 ---
 
@@ -204,12 +224,14 @@ colorlinks: true
 
 # Gestos nativos
 
-- **Swipe**: Navegación back, eliminar items de lista.
+- **Swipe**: Volver atrás, eliminar items de lista.
 - **Pull to refresh**: Actualizar contenido.
 - **Pinch**: Zoom en imágenes y mapas.
 - **Long press**: Menú contextual, acciones secundarias.
 
-![Gestos comunes](imgs/common-gestures.png){ width=50% }
+\centering
+
+![](imgs/common-gestures.png){ width=64% }
 
 ---
 
@@ -229,7 +251,9 @@ colorlinks: true
 - ScrollView para contenido largo en formularios.
 - Diferentes tipos de teclado: email, number, phone, url.
 
-![Keyboard handling](imgs/keyboard-handling.png){ width=35% }
+\centering
+
+![](imgs/keyboard-handling.png){ width=64% }
 
 ---
 
@@ -240,7 +264,9 @@ colorlinks: true
 - **Inactive**: Transición entre estados.
 - **Terminated**: App cerrada completamente por sistema.
 
-![App lifecycle](imgs/app-lifecycle.png){ width=44% }
+\centering
+
+![](imgs/app-lifecycle.png){ width=64% }
 
 ---
 
@@ -267,9 +293,11 @@ colorlinks: true
 - Datos críticos guardados en almacenamiento local.
 - Sincronización automática cuando hay conexión.
 - UI funcional incluso offline.
-- Queue de operaciones pendientes para sincronizar.
+- Cola de operaciones pendientes para sincronizar.
 
-![Arquitectura offline](imgs/offline-architecture.png){ width=50% }
+\centering
+
+![](imgs/offline-architecture.png){ width=64% }
 
 ---
 
@@ -293,7 +321,7 @@ colorlinks: true
 
 # Monetización
 
-- **Gratuita con ads**: Ingresos por publicidad (AdMob, etc).
+- **Gratuita con publicidad**: Ingresos por publicidad (AdMob, etc).
 - **Freemium**: Funcionalidad básica gratis, premium paga.
 - **Pago único**: Costo por descarga inicial.
 - **Suscripción**: Pago recurrente mensual o anual.
@@ -323,7 +351,7 @@ colorlinks: true
 
 | Aspecto | Web | Móvil |
 |---------|-----|-------|
-| Deploy | Instantáneo | 1-3 días review |
+| Deploy | Instantáneo | 1-3 días de revisión |
 | Actualización | Automática | Usuario decide |
 | Offline | Service Workers | Nativo completo |
 | Sensores | Limitado | Acceso total |
@@ -346,12 +374,16 @@ colorlinks: true
 
 ---
 
-# Progressive Web Apps
+# Web instalable como app
 
-- Web que se comporta como app móvil.
-- Instalable en home screen sin tiendas.
-- Funcionalidad offline con Service Workers.
-- Notificaciones push (limitadas en iOS).
+Una **PWA**, Progressive Web App, es un sitio web que se instala como una app.
+
+- Funciona como web en cualquier navegador y suma funciones de app donde el navegador las soporta, de ahí el "progressive".
+- El manifest es un archivo JSON con el nombre y el ícono que aparecen en la pantalla de inicio.
+- El service worker es un archivo JavaScript que el navegador ejecuta aparte de la página, entre la app y la red.
+- El service worker guarda archivos en caché, así la app abre sin conexión.
+- Se publica como cualquier web, sin pasar por App Store ni Google Play.
+- En iOS las notificaciones push son limitadas.
 
 ---
 
@@ -367,9 +399,9 @@ colorlinks: true
 # React Native: Limitaciones
 
 - Performance no igual a nativo puro (Swift/Kotlin).
-- Bridge JS-Native puede causar bottlenecks.
+- Bridge JS-Native puede causar cuellos de botella.
 - Algunos componentes nativos requieren código específico.
-- Actualizaciones de RN pueden introducir breaking changes.
+- Actualizaciones de RN pueden introducir cambios incompatibles.
 
 ---
 
@@ -389,29 +421,31 @@ colorlinks: true
 2. Testing frecuente en dispositivo real.
 3. Build para TestFlight o Internal Testing.
 4. Beta testing con usuarios reales externos.
-5. Iteración: fix bugs y ajustes basados en feedback.
-6. Submit a stores para revisión oficial.
-7. Release escalonado (rollout gradual 10% > 50% > 100%).
+5. Iteración: corregir bugs y ajustar según retroalimentación.
+6. Enviar a las tiendas para revisión oficial.
+7. Publicación escalonada (rollout gradual 10% > 50% > 100%).
 
 ---
 
 # Debugging
 
 - **React Native Debugger**: Chrome DevTools para RN.
-- **Flipper**: Facebook debugging platform completa.
+- **Flipper**: Plataforma de depuración de Facebook.
 - **Reactotron**: Logs y state inspector visual.
-- **Console logs**: Via terminal con metro bundler.
+- **Console logs**: En el terminal de Metro.
 
 ---
 
 # Guidelines de diseño
 
-- **iOS**: Human Interface Guidelines de Apple.
-- **Android**: Material Design 3 de Google.
+- **iOS**: Human Interface Guidelines de Apple, con el estilo Liquid Glass desde iOS 26.
+- **Android**: Material 3 Expressive de Google.
 - Respetar patrones nativos de cada plataforma cuando sea posible.
 - Consistencia dentro de tu app es más importante que copiar OS.
 
-![Design Guidelines](imgs/design-guidelines.png){ width=55% }
+\centering
+
+![](imgs/design-guidelines.png){ width=64% }
 
 ---
 
@@ -429,9 +463,9 @@ colorlinks: true
 
 - Diseñar primero para móvil (mobile-first thinking).
 - Optimizar y comprimir todas las imágenes.
-- Minimizar bundle size, code splitting cuando posible.
+- Minimizar el tamaño del bundle, code splitting cuando posible.
 - Usar FlatList para listas largas, nunca ScrollView.
-- Implementar retry logic en todas las network requests.
+- Reintentar las peticiones de red que fallan.
 - Probar en redes lentas con throttling (3G, 2G).
 
 ---

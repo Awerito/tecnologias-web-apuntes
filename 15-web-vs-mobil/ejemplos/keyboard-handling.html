@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Keyboard</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        color: #111827;
+        width: 1200px;
+        height: 640px;
+        overflow: hidden;
+      }
+      .compare {
+        display: flex;
+        height: 640px;
+      }
+      .half {
+        flex: 1;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .half + .half {
+        border-left: 1px solid #e5e7eb;
+      }
+      .badge {
+        align-self: flex-start;
+        padding: 4px 16px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .bad {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .good {
+        background: #dcfce7;
+        color: #15803d;
+      }
+      .neutral {
+        background: #e5e7eb;
+        color: #374151;
+      }
+      .phone {
+        position: relative;
+        width: 280px;
+        height: 500px;
+        margin-top: 12px;
+        border: 8px solid #111827;
+        border-radius: 36px;
+        overflow: hidden;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        font-weight: 700;
+      }
+      .content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .item {
+        padding: 14px;
+        border-radius: 12px;
+        background: #f3f4f6;
+      }
+      .line {
+        height: 14px;
+        background: #f3f4f6;
+        border-radius: 6px;
+      }
+      .line.short {
+        width: 60%;
+      }
+      .hero {
+        height: 110px;
+        background: #e5e7eb;
+        border-radius: 12px;
+      }
+      .tabs {
+        display: flex;
+        margin-top: auto;
+        border-top: 1px solid #e5e7eb;
+        background: #f3f4f6;
+      }
+      .tabs span {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        padding: 14px 0;
+        color: #6b7280;
+      }
+      .tabs .active {
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .caption {
+        margin-top: auto;
+        color: #6b7280;
+        font-size: 22px;
+        align-self: flex-start;
+      }
+      .scene {
+        height: 640px;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+      }
+      .row {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .label {
+        font-weight: 600;
+      }
+      .arrow {
+        color: #6b7280;
+        font-size: 16px;
+        text-align: center;
+      }
+      .arrow b {
+        display: block;
+        font-size: 40px;
+        color: #111827;
+      }
+      .field {
+        padding: 10px 12px;
+        border: 2px solid #d1d5db;
+        border-radius: 10px;
+        font-size: 15px;
+        color: #6b7280;
+      }
+      .field.focus {
+        border-color: #2563eb;
+        color: #111827;
+      }
+      .btn {
+        padding: 12px;
+        border-radius: 10px;
+        background: #2563eb;
+        color: #ffffff;
+        text-align: center;
+        font-weight: 600;
+      }
+      .kb {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 46%;
+        background: #d1d5db;
+        padding: 10px 6px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .kb div {
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+      }
+      .kb span {
+        width: 21px;
+        height: 34px;
+        border-radius: 5px;
+        background: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="compare">
+      <div class="half">
+        <span class="badge bad">Mal</span>
+        <div class="phone">
+          <div class="header">Registro</div>
+          <div class="content" style="margin-top: 60px"><div class="field">Nombre</div><div class="field">Email</div><div class="field">RUT</div><div class="field focus">Teléfono|</div><div class="btn">Registrar</div></div>
+          <div class="kb"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+        </div>
+        <div class="caption">El teclado tapa el campo activo y el botón</div>
+      </div>
+      <div class="half">
+        <span class="badge good">Bien</span>
+        <div class="phone">
+          <div class="header">Registro</div>
+          <div class="content"><div class="field">RUT</div><div class="field focus">Teléfono|</div><div class="btn">Registrar</div></div>
+          <div class="kb"><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div>
+        </div>
+        <div class="caption">El formulario sube, campo y botón visibles</div>
+      </div>
+    </div>
+  </body>
+</html>

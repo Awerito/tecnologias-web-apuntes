@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>iOS vs Android</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        color: #111827;
+        width: 1200px;
+        height: 640px;
+        overflow: hidden;
+      }
+      .compare {
+        display: flex;
+        height: 640px;
+      }
+      .half {
+        flex: 1;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .half + .half {
+        border-left: 1px solid #e5e7eb;
+      }
+      .badge {
+        align-self: flex-start;
+        padding: 4px 16px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .bad {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .good {
+        background: #dcfce7;
+        color: #15803d;
+      }
+      .neutral {
+        background: #e5e7eb;
+        color: #374151;
+      }
+      .phone {
+        position: relative;
+        width: 280px;
+        height: 500px;
+        margin-top: 12px;
+        border: 8px solid #111827;
+        border-radius: 36px;
+        overflow: hidden;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        font-weight: 700;
+      }
+      .content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .item {
+        padding: 14px;
+        border-radius: 12px;
+        background: #f3f4f6;
+      }
+      .line {
+        height: 14px;
+        background: #f3f4f6;
+        border-radius: 6px;
+      }
+      .line.short {
+        width: 60%;
+      }
+      .hero {
+        height: 110px;
+        background: #e5e7eb;
+        border-radius: 12px;
+      }
+      .tabs {
+        display: flex;
+        margin-top: auto;
+        border-top: 1px solid #e5e7eb;
+        background: #f3f4f6;
+      }
+      .tabs span {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        padding: 14px 0;
+        color: #6b7280;
+      }
+      .tabs .active {
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .caption {
+        margin-top: auto;
+        color: #6b7280;
+        font-size: 22px;
+        align-self: flex-start;
+      }
+      .scene {
+        height: 640px;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+      }
+      .row {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .label {
+        font-weight: 600;
+      }
+      .arrow {
+        color: #6b7280;
+        font-size: 16px;
+        text-align: center;
+      }
+      .arrow b {
+        display: block;
+        font-size: 40px;
+        color: #111827;
+      }
+      .ios-head {
+        padding: 12px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        display: flex;
+        align-items: center;
+      }
+      .ios-head .back {
+        color: #2563eb;
+        width: 80px;
+      }
+      .ios-head .title {
+        flex: 1;
+        text-align: center;
+        font-weight: 600;
+        margin-right: 80px;
+      }
+      .md-head {
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-size: 20px;
+        background: #f3edf7;
+      }
+      .home-bar {
+        margin: auto auto 10px;
+        width: 110px;
+        height: 5px;
+        border-radius: 3px;
+        background: #111827;
+      }
+      .nav-bar {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 12px 0;
+        background: #111827;
+        color: #ffffff;
+      }
+      .swipe {
+        position: absolute;
+        left: 6px;
+        top: 220px;
+        color: #2563eb;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="compare">
+      <div class="half">
+        <span class="badge neutral">iOS</span>
+        <div class="phone">
+          <div class="ios-head"><span class="back">&#8249; Lista</span><span class="title">Detalle</span></div>
+          <div class="content"><div class="hero"></div><div class="line"></div><div class="line short"></div></div>
+          <div class="swipe">&#8594; desliza desde el borde</div>
+          <div class="home-bar"></div>
+        </div>
+        <div class="caption">Atrás en el header o deslizando desde el borde</div>
+      </div>
+      <div class="half">
+        <span class="badge neutral">Android</span>
+        <div class="phone">
+          <div class="md-head"><span>&#8592;</span><span>Detalle</span></div>
+          <div class="content"><div class="hero"></div><div class="line"></div><div class="line short"></div></div>
+          <div class="nav-bar"><span>&#9664;</span><span>&#9679;</span><span>&#9632;</span></div>
+        </div>
+        <div class="caption">Flecha a la izquierda y botón atrás del sistema</div>
+      </div>
+    </div>
+  </body>
+</html>

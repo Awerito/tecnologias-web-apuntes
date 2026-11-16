@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>List performance</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        color: #111827;
+        width: 1200px;
+        height: 640px;
+        overflow: hidden;
+      }
+      .compare {
+        display: flex;
+        height: 640px;
+      }
+      .half {
+        flex: 1;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .half + .half {
+        border-left: 1px solid #e5e7eb;
+      }
+      .badge {
+        align-self: flex-start;
+        padding: 4px 16px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .bad {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .good {
+        background: #dcfce7;
+        color: #15803d;
+      }
+      .neutral {
+        background: #e5e7eb;
+        color: #374151;
+      }
+      .phone {
+        position: relative;
+        width: 280px;
+        height: 500px;
+        margin-top: 12px;
+        border: 8px solid #111827;
+        border-radius: 36px;
+        overflow: hidden;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        font-weight: 700;
+      }
+      .content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .item {
+        padding: 14px;
+        border-radius: 12px;
+        background: #f3f4f6;
+      }
+      .line {
+        height: 14px;
+        background: #f3f4f6;
+        border-radius: 6px;
+      }
+      .line.short {
+        width: 60%;
+      }
+      .hero {
+        height: 110px;
+        background: #e5e7eb;
+        border-radius: 12px;
+      }
+      .tabs {
+        display: flex;
+        margin-top: auto;
+        border-top: 1px solid #e5e7eb;
+        background: #f3f4f6;
+      }
+      .tabs span {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        padding: 14px 0;
+        color: #6b7280;
+      }
+      .tabs .active {
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .caption {
+        margin-top: auto;
+        color: #6b7280;
+        font-size: 22px;
+        align-self: flex-start;
+      }
+      .scene {
+        height: 640px;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+      }
+      .row {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .label {
+        font-weight: 600;
+      }
+      .arrow {
+        color: #6b7280;
+        font-size: 16px;
+        text-align: center;
+      }
+      .arrow b {
+        display: block;
+        font-size: 40px;
+        color: #111827;
+      }
+      .stack {
+        position: relative;
+        margin-top: 12px;
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .stack div {
+        height: 34px;
+        border-radius: 8px;
+      }
+      .on {
+        background: #2563eb;
+      }
+      .off {
+        border: 2px dashed #d1d5db;
+      }
+      .stack .viewport {
+        position: absolute;
+        left: -14px;
+        right: -14px;
+        top: 118px;
+        height: 230px;
+        border: 6px solid #111827;
+        border-radius: 22px;
+      }
+      .count {
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 22px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="compare">
+      <div class="half">
+        <span class="badge bad">ScrollView</span>
+        <div class="stack">
+          <div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div>
+          <div class="viewport"></div>
+        </div>
+        <div class="count">1000 de 1000 renderizados</div>
+        <div class="caption">Renderiza todo, incluso lo que no se ve</div>
+      </div>
+      <div class="half">
+        <span class="badge good">FlatList</span>
+        <div class="stack">
+          <div class="off"></div><div class="off"></div><div class="off"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="on"></div><div class="off"></div><div class="off"></div><div class="off"></div>
+          <div class="viewport"></div>
+        </div>
+        <div class="count">~10 de 1000 renderizados</div>
+        <div class="caption">Renderiza solo lo visible en pantalla</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Offline architecture</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        color: #111827;
+        width: 1200px;
+        height: 640px;
+        overflow: hidden;
+      }
+      .compare {
+        display: flex;
+        height: 640px;
+      }
+      .half {
+        flex: 1;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .half + .half {
+        border-left: 1px solid #e5e7eb;
+      }
+      .badge {
+        align-self: flex-start;
+        padding: 4px 16px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .bad {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .good {
+        background: #dcfce7;
+        color: #15803d;
+      }
+      .neutral {
+        background: #e5e7eb;
+        color: #374151;
+      }
+      .phone {
+        position: relative;
+        width: 280px;
+        height: 500px;
+        margin-top: 12px;
+        border: 8px solid #111827;
+        border-radius: 36px;
+        overflow: hidden;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        font-weight: 700;
+      }
+      .content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .item {
+        padding: 14px;
+        border-radius: 12px;
+        background: #f3f4f6;
+      }
+      .line {
+        height: 14px;
+        background: #f3f4f6;
+        border-radius: 6px;
+      }
+      .line.short {
+        width: 60%;
+      }
+      .hero {
+        height: 110px;
+        background: #e5e7eb;
+        border-radius: 12px;
+      }
+      .tabs {
+        display: flex;
+        margin-top: auto;
+        border-top: 1px solid #e5e7eb;
+        background: #f3f4f6;
+      }
+      .tabs span {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        padding: 14px 0;
+        color: #6b7280;
+      }
+      .tabs .active {
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .caption {
+        margin-top: auto;
+        color: #6b7280;
+        font-size: 22px;
+        align-self: flex-start;
+      }
+      .scene {
+        height: 640px;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+      }
+      .row {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .label {
+        font-weight: 600;
+      }
+      .arrow {
+        color: #6b7280;
+        font-size: 16px;
+        text-align: center;
+      }
+      .arrow b {
+        display: block;
+        font-size: 40px;
+        color: #111827;
+      }
+      .box {
+        width: 250px;
+        padding: 56px 0;
+        border-radius: 16px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 28px;
+        border: 3px solid #111827;
+      }
+      .box small {
+        display: block;
+        font-weight: 400;
+        font-size: 15px;
+        margin-top: 6px;
+        color: #6b7280;
+      }
+      .arrow {
+        width: 130px;
+      }
+      .dashed b {
+        color: #9ca3af;
+      }
+      .server {
+        border-style: dashed;
+        border-color: #9ca3af;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scene">
+      <div class="row" style="gap: 10px">
+        <div class="box">App<small>lee y escribe</small></div>
+        <div class="arrow"><b>&#8644;</b>siempre</div>
+        <div class="box">Base local<small>datos + cola de cambios</small></div>
+        <div class="arrow dashed"><b>&#8644;</b>con conexión</div>
+        <div class="box server">Servidor<small>sincroniza la cola</small></div>
+      </div>
+      <div class="caption">La app trabaja con datos locales, la red solo sincroniza</div>
+    </div>
+  </body>
+</html>

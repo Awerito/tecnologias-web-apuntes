@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Design guidelines</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        color: #111827;
+        width: 1200px;
+        height: 640px;
+        overflow: hidden;
+      }
+      .compare {
+        display: flex;
+        height: 640px;
+      }
+      .half {
+        flex: 1;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .half + .half {
+        border-left: 1px solid #e5e7eb;
+      }
+      .badge {
+        align-self: flex-start;
+        padding: 4px 16px;
+        border-radius: 999px;
+        font-weight: 600;
+        background: #e5e7eb;
+        color: #374151;
+      }
+      .phone {
+        position: relative;
+        width: 280px;
+        height: 500px;
+        margin-top: 12px;
+        border: 8px solid #111827;
+        border-radius: 36px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+      .caption {
+        margin-top: auto;
+        color: #6b7280;
+        font-size: 22px;
+        align-self: flex-start;
+      }
+
+      /* iOS 26, Liquid Glass: translucent controls floating over content */
+      .ios {
+        background: linear-gradient(
+          160deg,
+          #fb923c 0%,
+          #f472b6 45%,
+          #60a5fa 100%
+        );
+      }
+      .ios .title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #ffffff;
+        padding: 18px 18px 8px;
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.28);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        color: #111827;
+      }
+      .ios .card {
+        margin: 8px 14px;
+        border-radius: 22px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .ios-sw {
+        width: 52px;
+        height: 32px;
+        border-radius: 16px;
+        background: #34c759;
+        position: relative;
+      }
+      .ios-sw::after {
+        content: "";
+        position: absolute;
+        right: 2px;
+        top: 2px;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: #ffffff;
+      }
+      .ios .btn {
+        margin: 8px 14px;
+        padding: 12px;
+        border-radius: 999px;
+        text-align: center;
+        font-weight: 600;
+      }
+      .ios .tabbar {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        border-radius: 999px;
+        display: flex;
+        justify-content: space-around;
+        padding: 12px 0;
+        font-size: 14px;
+      }
+      .ios .tabbar .on {
+        font-weight: 700;
+        color: #1d4ed8;
+      }
+
+      /* Material 3 Expressive: bold shapes, strong color, larger targets */
+      .md {
+        background: #fef7ff;
+      }
+      .md .title {
+        font-size: 30px;
+        font-weight: 800;
+        color: #21005d;
+        padding: 18px 18px 8px;
+      }
+      .md .card {
+        margin: 8px 14px;
+        border-radius: 28px;
+        padding: 16px 18px;
+        background: #eaddff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .md-sw {
+        width: 56px;
+        height: 34px;
+        border-radius: 17px;
+        background: #6750a4;
+        position: relative;
+      }
+      .md-sw::after {
+        content: "\2713";
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #ffffff;
+        color: #6750a4;
+        font-size: 15px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 26px;
+      }
+      .md .btn {
+        margin: 8px 14px;
+        padding: 18px;
+        border-radius: 999px;
+        background: #6750a4;
+        color: #ffffff;
+        text-align: center;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .md .fab {
+        position: absolute;
+        right: 18px;
+        bottom: 84px;
+        width: 64px;
+        height: 64px;
+        border-radius: 22px;
+        background: #ffd8e4;
+        color: #31111d;
+        font-size: 34px;
+        text-align: center;
+        line-height: 64px;
+      }
+      .md .navbar {
+        margin-top: auto;
+        display: flex;
+        gap: 8px;
+        padding: 12px 12px 14px;
+        background: #f3edf7;
+        font-size: 14px;
+      }
+      .md .navbar span {
+        flex: 1;
+        text-align: center;
+        padding: 6px 0;
+        border-radius: 999px;
+      }
+      .md .navbar .on {
+        background: #e8def8;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="compare">
+      <div class="half">
+        <span class="badge">iOS</span>
+        <div class="phone ios">
+          <div class="title">Ajustes</div>
+          <div class="card glass">
+            Notificaciones<span class="ios-sw"></span>
+          </div>
+          <div class="btn glass">Guardar</div>
+          <div class="tabbar glass">
+            <span class="on">Inicio</span><span>Buscar</span
+            ><span>Ajustes</span>
+          </div>
+        </div>
+        <div class="caption">Liquid Glass, controles translúcidos</div>
+      </div>
+      <div class="half">
+        <span class="badge">Android</span>
+        <div class="phone md">
+          <div class="title">Ajustes</div>
+          <div class="card">Notificaciones<span class="md-sw"></span></div>
+          <div class="btn">Guardar</div>
+          <div class="fab">+</div>
+          <div class="navbar">
+            <span class="on">Inicio</span><span>Buscar</span
+            ><span>Ajustes</span>
+          </div>
+        </div>
+        <div class="caption">Material 3 Expressive, formas grandes</div>
+      </div>
+    </div>
+  </body>
+</html>

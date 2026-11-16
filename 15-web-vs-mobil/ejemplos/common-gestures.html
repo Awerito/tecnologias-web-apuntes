@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Gestures</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        font-family: system-ui, sans-serif;
+        font-size: 18px;
+        color: #111827;
+        width: 1200px;
+        height: 640px;
+        overflow: hidden;
+      }
+      .compare {
+        display: flex;
+        height: 640px;
+      }
+      .half {
+        flex: 1;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .half + .half {
+        border-left: 1px solid #e5e7eb;
+      }
+      .badge {
+        align-self: flex-start;
+        padding: 4px 16px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .bad {
+        background: #fee2e2;
+        color: #b91c1c;
+      }
+      .good {
+        background: #dcfce7;
+        color: #15803d;
+      }
+      .neutral {
+        background: #e5e7eb;
+        color: #374151;
+      }
+      .phone {
+        position: relative;
+        width: 280px;
+        height: 500px;
+        margin-top: 12px;
+        border: 8px solid #111827;
+        border-radius: 36px;
+        overflow: hidden;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        padding: 14px 16px;
+        border-bottom: 1px solid #e5e7eb;
+        font-weight: 700;
+      }
+      .content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .item {
+        padding: 14px;
+        border-radius: 12px;
+        background: #f3f4f6;
+      }
+      .line {
+        height: 14px;
+        background: #f3f4f6;
+        border-radius: 6px;
+      }
+      .line.short {
+        width: 60%;
+      }
+      .hero {
+        height: 110px;
+        background: #e5e7eb;
+        border-radius: 12px;
+      }
+      .tabs {
+        display: flex;
+        margin-top: auto;
+        border-top: 1px solid #e5e7eb;
+        background: #f3f4f6;
+      }
+      .tabs span {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        padding: 14px 0;
+        color: #6b7280;
+      }
+      .tabs .active {
+        color: #2563eb;
+        font-weight: 700;
+      }
+      .caption {
+        margin-top: auto;
+        color: #6b7280;
+        font-size: 22px;
+        align-self: flex-start;
+      }
+      .scene {
+        height: 640px;
+        padding: 20px 32px;
+        display: flex;
+        flex-direction: column;
+      }
+      .row {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+      }
+      .col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+      .label {
+        font-weight: 600;
+      }
+      .arrow {
+        color: #6b7280;
+        font-size: 16px;
+        text-align: center;
+      }
+      .arrow b {
+        display: block;
+        font-size: 40px;
+        color: #111827;
+      }
+      .phone {
+        width: 220px;
+        height: 380px;
+        border-width: 7px;
+        border-radius: 30px;
+      }
+      .touch {
+        position: absolute;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(37, 99, 235, 0.35);
+        border: 3px solid #2563eb;
+      }
+      .g {
+        position: absolute;
+        color: #2563eb;
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .row-item {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 150px;
+        height: 60px;
+        background: #f3f4f6;
+        display: flex;
+        align-items: center;
+      }
+      .row-item .del {
+        margin-left: auto;
+        height: 100%;
+        width: 80px;
+        background: #ef4444;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+      }
+      .mini-spin {
+        position: absolute;
+        top: 16px;
+        left: 50%;
+        margin-left: -16px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 4px solid #e5e7eb;
+        border-top-color: #2563eb;
+      }
+      .ctx {
+        position: absolute;
+        left: 70px;
+        top: 200px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        font-size: 14px;
+      }
+      .ctx div {
+        padding: 8px 16px;
+      }
+      .img {
+        position: absolute;
+        inset: 90px 30px;
+        background: #e5e7eb;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scene">
+      <div class="row" style="gap: 20px">
+        <div class="col"><span class="label">Swipe</span><div class="phone"><div class="row-item"><span style="padding-left: 12px">Empanada</span><span class="del">Eliminar</span></div><div class="touch" style="left: 84px; top: 158px"></div><div class="g" style="left: 30px; top: 205px">&#8592;</div></div></div>
+        <div class="col"><span class="label">Pull to refresh</span><div class="phone"><div class="mini-spin"></div><div class="content" style="margin-top: 60px"><div class="item">Empanada</div><div class="item">Completo</div></div><div class="touch" style="left: 80px; top: 120px"></div><div class="g" style="left: 90px; top: 170px">&#8595;</div></div></div>
+        <div class="col"><span class="label">Pinch</span><div class="phone"><div class="img"></div><div class="touch" style="left: 40px; top: 210px"></div><div class="touch" style="left: 120px; top: 110px"></div><div class="g" style="left: 20px; top: 250px">&#8601;</div><div class="g" style="left: 160px; top: 70px">&#8599;</div></div></div>
+        <div class="col"><span class="label">Long press</span><div class="phone"><div class="content"><div class="item">Empanada</div><div class="item">Completo</div></div><div class="touch" style="left: 60px; top: 120px; box-shadow: 0 0 0 10px rgba(37, 99, 235, 0.2)"></div><div class="ctx"><div>Editar</div><div>Compartir</div><div style="color: #b91c1c">Eliminar</div></div></div></div>
+      </div>
+      <div class="caption">Gestos que el usuario ya espera en una app móvil</div>
+    </div>
+  </body>
+</html>
